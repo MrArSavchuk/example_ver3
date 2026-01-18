@@ -1,0 +1,24 @@
+import { getStyles } from "@/shared/lib";
+import style from "./BurgerButton.module.scss";
+
+export const BurgerButton = ({
+  isOpen,
+  toggleMenu,
+  className,
+  ariaLabel
+}) => {
+
+  return (
+    <button
+      className={getStyles(style.hamburger, { [style.open]: isOpen }, [className])}
+      onClick={toggleMenu}
+      type="button"
+      aria-label={ariaLabel || "Toggle Menu"}
+      aria-expanded={isOpen}
+    >
+      <div className={style.lineTop}></div>
+      <div className={style.lineMiddle}></div>
+      <div className={style.lineBottom}></div>
+    </button>
+  );
+};
