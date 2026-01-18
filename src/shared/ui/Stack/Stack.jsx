@@ -1,7 +1,6 @@
-import React from "react";
 import { forwardRef } from "react";
+import { getStyles } from "../../lib";
 import styles from "./Stack.module.scss";
-import { getStyles } from "../../helper/getStyle";
 
 
 export const Stack = forwardRef(({
@@ -22,7 +21,7 @@ export const Stack = forwardRef(({
 		row: styles.directionRow,
 		column: styles.directionColumn,
 	}
-	
+
 	const justifyClasses = {
 		start: styles.justifyStart,
 		center: styles.justifyCenter,
@@ -30,7 +29,7 @@ export const Stack = forwardRef(({
 		between: styles.justifyBetween,
 		around: styles.justifyAround,
 	}
-	
+
 	const alignClasses = {
 		start: styles.alignStart,
 		center: styles.alignCenter,
@@ -39,14 +38,14 @@ export const Stack = forwardRef(({
 	}
 
 	const mapStackTag = {
-        div: "div",
-        section: "section",
-        article: "article",
-        aside: "aside",
-        main: "main",
-        nav: "nav",
-        header: "header"
-    };
+		div: "div",
+		section: "section",
+		article: "article",
+		aside: "aside",
+		main: "main",
+		nav: "nav",
+		header: "header"
+	};
 
 	const mapGap = {
 		8: "gap8",
@@ -63,12 +62,12 @@ export const Stack = forwardRef(({
 	}
 
 	const additional = [
-        justifyClasses[justify],
-        alignClasses[align],
-        directionClasses[direction],
-        gap && styles[mapGap[gap]],
+		justifyClasses[justify],
+		alignClasses[align],
+		directionClasses[direction],
+		gap && styles[mapGap[gap]],
 		className,
-    ];
+	];
 
 	const Tag = mapStackTag[tag] || "div";
 

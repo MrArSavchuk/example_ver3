@@ -1,15 +1,18 @@
-import { Stack } from "@/shared/ui/Stack/Stack"
+import { Stack } from "@/shared/ui/Stack"
+import { useTranslation } from "react-i18next"
+
 
 function App() {
+  const { t } = useTranslation()
   return (
-    <Stack 
-    direction="column" 
-    align="center" 
-    gap="16">
+    <Stack
+      direction="column"
+      align="center"
+      gap="16"
+    >
       <h1>Olesya Martin</h1>
-      <p>Interior Designer</p>
+      <p>{t('Interior Designer')}</p>
     </Stack>
-
   )
 }
 
