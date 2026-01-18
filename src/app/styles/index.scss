@@ -1,0 +1,10 @@
+@use "normalize" as *;
+@use "vars" as *;
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+p {
+    line-height: var(--line-height);
+}
