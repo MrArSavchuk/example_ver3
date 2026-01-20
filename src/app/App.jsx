@@ -1,5 +1,6 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
+import { Button } from "../shared/ui/Button"
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
     >
       <h1>Olesya Martin</h1>
       <p>{t('Interior Designer')}</p>
+      {/* <Button variant="primary">Отправить</Button> только для теста */}
     </Stack>
+    
   )
 }
 
