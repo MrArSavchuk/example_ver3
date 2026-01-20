@@ -1,0 +1,39 @@
+import { getStyle } from "@/shared/lib/getStyle/getStyle";
+import styles from "./Typography.module.scss";
+
+export const Typography = ({
+    type = "p", // "h1","h2","h3","p","li","span"
+    children,
+    size = "xs", // "md","m","l","xl","xxl"
+    weight = "normal", //"bold"
+    font = "lato", // "poiretOne"
+    className,
+    ...otherProps
+}) => {
+
+  const mapTextTag = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    p: "p",
+    li: "li",
+    span: "span",
+  };
+
+  const TextTag = mapTextTag[type];
+
+  const additional = [
+    styles[size],
+    styles[weight],
+    styles[font],
+    className,
+  ];
+
+  return (
+    <TextTag className={getStyle(styles.text, {}, additional)}
+    {...otherProps}
+    >
+      {children}
+    </TextTag>
+  );
+}
