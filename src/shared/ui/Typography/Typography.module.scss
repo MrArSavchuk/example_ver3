@@ -1,0 +1,76 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.text {
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.lato {
+  font-family: var(--font-lato);
+}
+
+.poiretOne {
+  font-family: var(--font-poiret-one);
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.xs {
+  font-size: var(--mobile-font-size-md);
+
+  @include tablet-m {
+    font-size: var(--font-size-xs);
+  }
+}
+
+.md {
+  font-size: var(--mobile-font-size-lg);
+
+  @include tablet-m {
+    font-size: var(--font-size-md);
+  }
+}
+
+.m {
+  font-size: var(--mobile-font-size-lg);
+
+  @include tablet-m {
+    font-size: var(--font-size-m);
+  }
+}
+
+.l {
+  font-size: var(--mobile-font-size-xl);
+
+  @include tablet-m {
+    font-size: var(--font-size-l);
+  }
+}
+
+.xl {
+  font-size: var(--mobile-font-size-xl);
+
+  @include tablet-m {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.xxl {
+  font-size: var(--mobile-font-size-xl);
+
+  @include tablet-m {
+    font-size: var(--font-size-xxl);
+  }
+}
+
+h1 span {
+  color: var(--red-color);
+}
