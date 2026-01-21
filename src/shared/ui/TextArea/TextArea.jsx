@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
-import { Stack } from "../Stack/Stack";
-import { getStyle } from "@/shared/helper/getStyle";
+import { Stack } from "@/shared/ui/Stack/Stack";
+import { getStyle } from "@/shared/lib";
 import styles from "./TextArea.module.scss";
 
 export const TextArea = forwardRef(({
@@ -8,7 +8,6 @@ export const TextArea = forwardRef(({
     register, 
     className,
     error,
-    maxLength,
     ...otherProps
     }, ref) => {
         
@@ -30,7 +29,6 @@ export const TextArea = forwardRef(({
                ref={ref}
                {...register}
                {...otherProps}
-               maxLength={maxLength}
                className={getStyle(styles.textarea, mode, [className])}
                onInput={handleInput}
             />    
@@ -43,9 +41,9 @@ export const TextArea = forwardRef(({
                 </span>
             )}
 
-            {maxLength && (
+            {otherProps.maxLength && (
                  <span className={styles.charCounter}>
-                    {charCount} / {maxLength}
+                    {charCount} / {otherProps.maxLength}
                  </span>
             )}
             </div>
