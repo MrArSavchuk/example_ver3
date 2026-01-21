@@ -4,10 +4,7 @@ export const Skeleton = ({ width, height }) => {
   return (
     <div
       className={styles.skeleton}
-      style={{
-        width: width,
-        height: height,
-      }}
+      style={{ width, height }}
     />
   );
 };
