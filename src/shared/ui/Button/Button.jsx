@@ -10,12 +10,14 @@ export const Button = forwardRef(({
   size = "xs",
   isLoading = false,
   disabled,
+  active = false,
   ariaLabel,
   ...otherProps
 }, ref) => {
 
   const mode = {
     [styles.isLoading]: isLoading,
+    [styles.active]: active
   }
 
   const additional = [

@@ -64,6 +64,10 @@ $sizes: (
   }
 }
 
+.active::after {
+  width: 100%;
+}
+
 .isLoading {
   cursor: default;
 }
