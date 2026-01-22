@@ -1,34 +1,43 @@
 import { Button } from "@/shared/ui/Button";
 import { useTranslation } from "react-i18next";
 
+const LANGS = [
+  {
+    code: "en",
+    label: "EN",
+  },
+  {
+    code: "ru",
+    label: "RU",
+  }
+]
+
 export const LangSwitcher = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
-  const changeLanguage = async (lang) => {
+  const changeLanguage = (lang) => {
     if (lang !== currentLang) {
-      await i18n.changeLanguage(lang);
+      i18n.changeLanguage(lang);
     }
   };
 
   return (
       <>
-        <Button 
-          variant = "secondary"
-          active = {currentLang === "en"}
-          onClick = {() => changeLanguage("en")} 
-          ariaLabel = "Lang Switcher to English"
-        >
-          EN
-        </Button>
-        <Button 
-          variant = "secondary"
-          active = {currentLang === "ru"}
-          onClick = {() => changeLanguage("ru")} 
-          ariaLabel = "Lang Switcher to Russian"
-        >
-          RU
-        </Button>
+        {
+          LANGS.map(({code, label}) => {
+            return(
+              <Button 
+              key = {code}
+              variant = {currentLang === code ? "primary" : "secondary"}
+              onClick = {() => changeLanguage(code)} 
+              ariaLabel = {`Lang Switcher to ${label}`}
+            >
+              {label}
+            </Button>
+            );
+          })
+        }
       </>
   );
 };

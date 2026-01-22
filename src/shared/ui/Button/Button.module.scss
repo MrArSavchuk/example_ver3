@@ -48,23 +48,11 @@ $sizes: (
     }   
 }
 
-.primary {
-  color: var(--red-color);
-  
-  &::after {
-    width: 100%;
-}
+.primary::after {
+  width: 100%;
 }
 
-.secondary {
-  color: var(--black-color);
-
-  &:hover::after {
-    width: 100%;
-  }
-}
-
-.active::after {
+.secondary:hover::after {
   width: 100%;
 }
 

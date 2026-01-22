@@ -6,18 +6,16 @@ import { Ellipsis } from "lucide-react";
 export const Button = forwardRef(({
   children,
   className,
-  variant = "secondary",
-  size = "xs",
+  variant = "secondary", // primary | secondary 
+  size = "xs", // xs | sm | md | xl | xxl
   isLoading = false,
   disabled,
-  active = false,
   ariaLabel,
   ...otherProps
 }, ref) => {
 
   const mode = {
     [styles.isLoading]: isLoading,
-    [styles.active]: active
   }
 
   const additional = [

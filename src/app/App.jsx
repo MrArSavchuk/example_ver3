@@ -1,5 +1,7 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
+import { LangSwitcher } from "../features/LangSwitcher"
+import { Button } from "../shared/ui/Button"
 
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
       gap="16"
     >
       <h1>Olesya Martin</h1>
-      <p>{t('Interior Designer')}</p>     
+      <p>{t('Interior Designer')}</p> 
     </Stack>
     
   )
