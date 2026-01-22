@@ -1,4 +1,4 @@
-import { getStyle } from "@/shared/lib/getStyle/getStyle";
+import { getStyles } from "../../lib";
 import styles from "./Typography.module.scss";
 
 export const Typography = ({
@@ -30,7 +30,7 @@ export const Typography = ({
   ];
 
   return (
-    <TextTag className={getStyle(styles.text, {}, additional)}
+    <TextTag className={getStyles(styles.text, {}, additional)}
     {...otherProps}
     >
       {children}
