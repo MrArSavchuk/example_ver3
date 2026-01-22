@@ -1,5 +1,5 @@
 import { forwardRef, useState } from "react";
-import { Stack } from "@/shared/ui/Stack/Stack";
+import { Stack } from "../Stack/Stack";
 import { getStyle } from "@/shared/lib";
 import styles from "./TextArea.module.scss";
 
