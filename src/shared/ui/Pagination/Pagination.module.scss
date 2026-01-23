@@ -1,0 +1,46 @@
+.paginationContainer {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+
+    &.noPagination {
+        opacity: 0;
+    }
+    
+    .indicator {
+        display: block;
+        width: 30px;  
+        height: 3px;   
+        background-color: var(--gray-color);
+        border: none;
+        cursor: pointer; 
+
+        a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            color: transparent;    
+        }
+    }
+    
+    .active  {
+        background-color: var(--gray-dark-color);
+    }
+    
+    .breakItem {
+        position: relative;
+        width: 30px; 
+        height: 3px; 
+        display: flex;
+        justify-content: center;
+
+        a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
