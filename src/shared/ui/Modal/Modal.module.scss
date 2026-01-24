@@ -33,11 +33,7 @@
 }
 
 @include tablet-l{
-    .closeBtnSvg{
-        width: 25px;
-        height: 25px;
-    }
-    .modalContentWrapper{
+       .modalContentWrapper{
         width: 80%;
         height: 100%;
     }
