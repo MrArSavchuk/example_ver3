@@ -12,7 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@techlabteam/useful-hooks": "^1.1.5",
-    "i18next": "^25.7.4",
+    "i18next": "^25.8.0",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-http-backend": "^3.0.2",
     "lucide-react": "^0.562.0",
@@ -20,7 +20,7 @@
     "react-dom": "^19.2.0",
     "react-i18next": "^16.5.3",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.12.0",
+    "react-router-dom": "^7.13.0",
     "react-toastify": "^11.0.5"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "sass": "^1.97.2",
+    "sass": "^1.97.3",
     "vite": "^7.2.4"
   }
 }
