@@ -1,7 +1,5 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
-import { Modal } from "../shared/ui/Modal/Modal";
-import { useState } from "react";
 
 
 function App() {
@@ -17,13 +15,8 @@ function App() {
     >
       <h1>Olesya Martin</h1>
       <p>{t('Interior Designer')}</p>
-      
-      {isOpen && (
-        <Modal changeOpen={setIsOpen}>
-          Модальное окно
-        </Modal>
-      )}
     </Stack>
+    
   )
 }
 
