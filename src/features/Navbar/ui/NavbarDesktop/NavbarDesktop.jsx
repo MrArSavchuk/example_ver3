@@ -1,4 +1,3 @@
-import { Button } from "@/shared/ui/Button";
 import { HashLink } from "react-router-hash-link"; 
 import { navigation } from "../../lib/data";
 import { useTranslation } from "react-i18next";
