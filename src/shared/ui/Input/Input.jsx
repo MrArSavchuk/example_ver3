@@ -1,11 +1,15 @@
 import { forwardRef, useId } from "react";
 import { getStyles } from "../../lib/getStyle/getStyle";
 import styles from "./Input.module.scss";
+import { Stack } from "../Stack/Stack";
+import { Typography } from "../Typography";
 
 export const Input = forwardRef(({
     className,
     label,
-    error,
+    isError, //boolean
+    errorMessage, //string 
+    fullWidth, //boolean для позиционирования по ширине контейнера
     register,
     disabled,
     ariaLabel,
@@ -15,12 +19,8 @@ export const Input = forwardRef(({
     const id = useId();
 
     const mode = {
-        [styles.errorState]: Boolean(error),
+        [styles.error]: isError,
     };
-
-    const additional = [
-        className
-    ];
 
     const setRefs = (node) => {
         if (register?.ref) register.ref(node);
@@ -30,24 +30,23 @@ export const Input = forwardRef(({
     };
 
     return (
-        <div className={getStyles(styles.wrapper, mode, additional)}>
-            {label && (
-                <label className={styles.label} htmlFor={id}>
-                    {label}
-                </label>
-            )}
+        <Stack direction="column" gap="8" fullWidth={fullWidth}>
+            <label className={styles.label}>
+                {label}
+                <input
+                    className={getStyles(styles.input, mode, [className])}
+                    id={id}
+                    ref={setRefs}
+                    {...register}
+                    {...otherProps}
+                />
+            </label>
 
-            <input
-                id={id}
-                ref={setRefs}
-                className={styles.input}
-                disabled={disabled}
-                aria-label={ariaLabel}
-                {...register}
-                {...otherProps}
-            />
-
-            {error && <span className={styles.errorText}>{error}</span>}
-        </div>
+            <Typography type="span" size="xxs"
+                className={styles.errorMessage}
+            >
+                {isError && errorMessage}
+            </Typography>
+        </Stack>
     );
 });

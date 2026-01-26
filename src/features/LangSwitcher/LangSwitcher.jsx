@@ -1,5 +1,6 @@
 import { Button } from "@/shared/ui/Button";
 import { useTranslation } from "react-i18next";
+import { Stack } from "@/shared/ui/Stack";
 
 const LANGS = [
   {
@@ -23,7 +24,7 @@ export const LangSwitcher = () => {
   };
 
   return (
-      <>
+      <Stack gap="8">
         {
           LANGS.map(({code, label}) => {
             return(
@@ -38,6 +39,6 @@ export const LangSwitcher = () => {
             );
           })
         }
-      </>
+      </Stack>
   );
 };
