@@ -1,0 +1,56 @@
+@use "@/app/styles/vars.scss" as *;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.label {
+    font-family: var(--font-lato);
+    font-size: var(--font-size-sm);
+    color: var(--black-color);
+}
+
+.input {
+    width: 100%;
+    padding: 10px 0;
+
+    font-family: var(--font-lato);
+    font-size: var(--font-size-md);
+    color: var(--black-color);
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+
+    &:focus {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+.errorState {
+    .input {
+        border-bottom: 1px solid rgba(255, 70, 70, 0.85);
+    }
+}
+
+.errorText {
+    font-family: var(--font-lato);
+    font-size: var(--font-size-xs);
+    color: rgba(255, 70, 70, 0.95);
+}
