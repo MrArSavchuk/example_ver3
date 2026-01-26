@@ -1,0 +1,1 @@
+export { LazyAuthPage as AuthPage } from './AuthPage.lazy';
