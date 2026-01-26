@@ -1,0 +1,21 @@
+@use "@/app/styles/vars.scss" as *;
+@use "@/app/styles/media-queries.scss" as *;
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: var(--font-size-xs);
+  justify-content: flex-end;
+}
+
+ @include desktop-l {
+    .navigationButton {
+        min-width: 100px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

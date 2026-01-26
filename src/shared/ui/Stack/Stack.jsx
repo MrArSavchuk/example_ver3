@@ -12,7 +12,7 @@ export const Stack = forwardRef(({
 	gap, // 8 | 16 | 24 | 32 | 40 | 64
 	tag = "div", // section | article | aside | main | nav | header
 	wrap,
-	max,
+	fullWidth,
 	...otherProps
 }, ref) => {
 
@@ -57,7 +57,7 @@ export const Stack = forwardRef(({
 	}
 
 	const mode = {
-		[styles.max]: max,
+		[styles.fullWidth]: fullWidth,
 		[styles.wrap]: wrap,
 	}
 
