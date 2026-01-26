@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import { Stack } from "../Stack/Stack";
-import { getStyle } from "@/shared/lib";
 import styles from "./TextArea.module.scss";
+import { getStyles } from "../../lib";
 
 export const TextArea = forwardRef(({
     label,
@@ -29,7 +29,7 @@ export const TextArea = forwardRef(({
                ref={ref}
                {...register}
                {...otherProps}
-               className={getStyle(styles.textarea, mode, [className])}
+               className={getStyles(styles.textarea, mode, [className])}
                onInput={handleInput}
             />    
          </label>

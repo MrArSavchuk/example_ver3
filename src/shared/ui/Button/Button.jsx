@@ -8,7 +8,7 @@ export const Button = forwardRef(({
   className,
   variant = "secondary", // primary | secondary 
   size = "xs", // xs | sm | md | xl | xxl
-  isLoading = false,
+  isLoading,
   disabled,
   ariaLabel,
   ...otherProps
@@ -28,16 +28,16 @@ export const Button = forwardRef(({
 
   return (
     <button
-      ref = {ref}
-      className = {getStyles(styles.button, mode, additional)}
-      disabled = {isDisabled}
-      aria-label = {ariaLabel}
+      ref={ref}
+      className={getStyles(styles.button, mode, additional)}
+      disabled={isDisabled}
+      aria-label={ariaLabel}
       {...otherProps}
     >
-      
-      {isLoading ? <Ellipsis className = {styles.loader}/> : children}
-    
+
+      {isLoading ? <Ellipsis className={styles.loader} /> : children}
+
     </button>
-    
+
   )
 });
