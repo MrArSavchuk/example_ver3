@@ -4,7 +4,7 @@ import { getStyles } from "../../lib"
 
 
 const DEFAULT_PAGINATION_CONFIG = {
-    breakThreshold: 6,    // после какого кол-ва страниц показывать "…"
+    breakThreshold: 5,    // после какого кол-ва страниц показывать "…"
     centerPageRange: 3,   // сколько страниц показывать в центре
     edgePageRange: 1,     // сколько страниц всегда видно по краям
 };
