@@ -48,15 +48,6 @@ Icons — единый источник иконок проекта **Olesya Mar
 
 ---
 
-## Связанные компоненты
-
-- Button
-- Pagination
-- Toast
-- Navigation
-
----
-
 ## Внешняя документация
 
 lucide-react:  
