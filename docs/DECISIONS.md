@@ -186,11 +186,11 @@
 ### Решение
 
 В проекте используется библиотека  
-**@rozhkov/react-useful-hooks**  
+**@techlabteam/useful-hooks**  
 как основной источник переиспользуемых React-хуков.
 
 Документация библиотеки доступна на npm:
-https://www.npmjs.com/package/@rozhkov/react-useful-hooks
+https://www.npmjs.com/package/@techlabteam/useful-hooks
 
 ### Последствия
 
