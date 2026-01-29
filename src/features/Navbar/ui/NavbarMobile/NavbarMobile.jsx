@@ -1,4 +1,5 @@
-import { useOverflowHidden, useToggle, useWindowWidth } from "../../lib/hooks";
+import { useToggle } from "../../lib/hooks";
+import { useWindowWidth, useOverflowHidden } from "@techlabteam/useful-hooks";
 import { HashLink } from "react-router-hash-link";
 import { navigation } from "../../lib/data";
 import { BurgerButton } from "./ui/BurgerButton";
