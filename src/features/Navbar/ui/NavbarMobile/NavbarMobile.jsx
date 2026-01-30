@@ -1,7 +1,7 @@
-import { useToggle } from "../../lib/hooks";
+import { useToggle } from "../../../../shared/lib";
 import { useWindowWidth, useOverflowHidden } from "@techlabteam/useful-hooks";
 import { HashLink } from "react-router-hash-link";
-import { navigation } from "../../lib/data";
+import { navigation } from "../../data";
 import { BurgerButton } from "./ui/BurgerButton";
 import { Stack } from "@/shared/ui/Stack";
 import { useTranslation } from "react-i18next";
