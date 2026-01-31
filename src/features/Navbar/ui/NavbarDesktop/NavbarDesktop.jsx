@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link"; 
-import { navigation } from "../../lib/data";
+import { navigation } from "../../data";
 import { useTranslation } from "react-i18next";
 import { Stack } from "@/shared/ui/Stack";
 import style from "./NavbarDesktop.module.scss";
