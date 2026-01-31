@@ -1,4 +1,3 @@
-import { useToggle } from "../../../../shared/lib";
 import { useWindowWidth, useOverflowHidden } from "@techlabteam/useful-hooks";
 import { HashLink } from "react-router-hash-link";
 import { navigation } from "../../data";
@@ -6,6 +5,7 @@ import { BurgerButton } from "./ui/BurgerButton";
 import { Stack } from "@/shared/ui/Stack";
 import { useTranslation } from "react-i18next";
 import style from "./NavbarMobile.module.scss";
+import { useToggle } from "@/shared/lib";
 
 export const NavbarMobile = () => {
   const { t } = useTranslation();

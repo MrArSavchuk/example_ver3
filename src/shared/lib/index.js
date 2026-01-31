@@ -1,2 +1,2 @@
 export * from './getStyle/getStyle';
-export { useToggle } from "./useToggle";
+export * from './useToggle/useToggle';
