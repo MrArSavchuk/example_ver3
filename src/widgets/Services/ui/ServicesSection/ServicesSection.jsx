@@ -1,6 +1,3 @@
-// import { useEffect } from "react";
-// import { servicesApi } from "@/features/EditServices/api/servicesApi";
-
 import { useTranslation } from "react-i18next";
 import { ServicesItem } from "@/widgets/Services/ui/ServicesItem/ServicesItem";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
@@ -9,14 +6,6 @@ import { Typography } from "@/shared/ui/Typography/Typography";
 import styles from "./ServicesSection.module.scss";
 import { useEffect, useState } from "react";
 import { servicesApi } from "@/features/EditServices/api/servicesApi";
-
-// export const ServicesSection = () => {
-//   useEffect(() => {
-//     servicesApi();
-//   }, []);
-
-//   return <div>Services</div>;
-// };
 
 
 export const ServicesSection = () => {
@@ -31,7 +20,7 @@ export const ServicesSection = () => {
         setError(null);
         
         try {  
-          const lang = i18n.language.startsWith("en") ? "ru" : "en";   
+          const lang = i18n.language.startsWith("ru") ? "ru" : "en";   
           const data = await servicesApi(lang);
           setPackages(data);
         } catch (err) { 
