@@ -3,9 +3,9 @@ import { Typography } from "@/shared/ui/Typography";
 import { Stack } from "@/shared/ui/Stack";
 import desktopBadge from "@/shared/assets/images/most-popular-desktop.webp";
 import { ChevronDown, Minus, Plus } from "lucide-react";
-import styles from "./ServiceItem.module.scss";
+import styles from "./ServicesItem.module.scss";
 
-export const ServiceItem = memo(({ item, defaultOpen, children, value }) => {
+export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
   if (!item) return null;
 
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -28,7 +28,7 @@ export const ServiceItem = memo(({ item, defaultOpen, children, value }) => {
   };
 
   return (
-    <div className={styles.serviceItem}>
+    <div className={styles.servicesItem}>
       <Stack
         className={styles.titleContainer}
         justify="between"
@@ -102,3 +102,4 @@ export const ServiceItem = memo(({ item, defaultOpen, children, value }) => {
     </div>
   );
 });
+
