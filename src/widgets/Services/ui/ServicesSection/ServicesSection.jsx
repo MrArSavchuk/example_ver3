@@ -62,13 +62,11 @@ export const ServicesSection = () => {
           ))
 
         ) :
-        
         error ? (
-  <Typography color="error">
-    {t("Error loading services")}: {error}
-  </Typography>
-)
-        
+          <Typography color="error">
+            {t("Error loading services")}: {error}
+          </Typography>
+        )
         :
         packages?.services?.map(item => (
           <ServicesItem
