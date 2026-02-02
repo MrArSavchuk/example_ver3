@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { Typography } from "@/shared/ui/Typography";
 import { Stack } from "@/shared/ui/Stack";
-import desktopBadge from "@/shared/assets/images/most-popular-desktop.webp";
+import desktopBadge from "@/shared/assets/images/most-popular.webp";
 import { ChevronDown, Minus, Plus } from "lucide-react";
 import styles from "./ServicesItem.module.scss";
 
