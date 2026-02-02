@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ServicesItem } from "@/widgets/Services/ui/ServicesItem/ServicesItem";
+import { ServicesItem } from "@/widgets/Services/ui/ServiceItem/ServicesItem";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { Stack } from "@/shared/ui/Stack/Stack";
 import { Typography } from "@/shared/ui/Typography/Typography";
@@ -38,11 +38,11 @@ export const ServicesSection = () => {
     return (
     <Stack tag="section" id="services-and-prices" 
       direction="column" gap="32"
-      className={styles.accordion}
+      className={styles.services}
     >
       <Stack direction="column" gap="16">
         <Typography 
-          type="h2" size="mobile-xl" 
+          type="h2" size="s" weight="bold"
           className={styles.headingStyle}
         >
           {t("Services")}
@@ -53,7 +53,7 @@ export const ServicesSection = () => {
       </Stack>
       <Stack 
         direction="column" gap="24" max
-        className={styles.accordionItem}
+        className={styles.servicesItem}
       >
         {isLoading ? 
         (
