@@ -18,12 +18,17 @@ export const Process = () => {
             <Stack direction="column" gap="16">
                 <Typography 
                     type="h2" 
+                    size="s"
                     weight="bold"
                     className={styles.headingStyle}
                 >
                     {t("HowItWorks")} 
                 </Typography>
-                <Typography className={styles.textStyle}>
+                <Typography 
+                    className={styles.textStyle}
+                    type="p" 
+                    size="xs"
+                    >
                     {t("How It Works Text")} 
                 </Typography>
             </Stack>
@@ -44,10 +49,17 @@ export const Process = () => {
                                 {i < steps.length - 1 && <Line/>}
                             </Stack>
                             <Stack direction="column" gap="16"> 
-                                <Typography type="h3" weight="bold">
+                                <Typography 
+                                    type="h3"
+                                    size="xs" 
+                                    weight="bold"
+                                >
                                     {t(title)} 
                                 </Typography>
-                                <Typography lang={i18n.language} 
+                                <Typography 
+                                    type="p" 
+                                    size="xs"
+                                    lang={i18n.language} 
                                     className={styles.textProccess}
                                 >
                                     {t(text)} 
