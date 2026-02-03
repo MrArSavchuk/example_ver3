@@ -5,7 +5,7 @@ import { Stack } from "@/shared/ui/Stack/Stack";
 import { Typography } from "@/shared/ui/Typography/Typography";
 import styles from "./ServicesSection.module.scss";
 import { useEffect, useState } from "react";
-import { servicesApi } from "@/features/EditServices/api/servicesApi";
+import { servicesApi } from "@/features/ManageServices/api/servicesApi";
 
 
 export const ServicesSection = () => {
@@ -20,7 +20,7 @@ export const ServicesSection = () => {
         setError(null);
         
         try {  
-          const lang = i18n.language.startsWith("ru") ? "ru" : "en";   
+          const lang = i18n.language;   
           const data = await servicesApi(lang);
           setPackages(data);
         } catch (err) { 
