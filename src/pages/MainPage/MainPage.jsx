@@ -1,7 +1,5 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
-import { ServicesSection } from "@/widgets/Services/ui/ServicesSection/ServicesSection"
-import { LangSwitcher } from "@/features/LangSwitcher/LangSwitcher"
 
 
 const MainPage = () => {
@@ -14,8 +12,6 @@ const MainPage = () => {
        >
          <h1>Olesya Martin</h1>
          <p>{t('Interior Designer')}</p>
-         <LangSwitcher/>
-         <ServicesSection/>
        </Stack>
      )
 }

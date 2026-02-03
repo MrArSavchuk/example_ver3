@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ServicesItem } from "@/widgets/Services/ui/ServiceItem/ServicesItem";
+import { ServicesItem } from "../ServiceItem/ServicesItem";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { Stack } from "@/shared/ui/Stack/Stack";
 import { Typography } from "@/shared/ui/Typography/Typography";

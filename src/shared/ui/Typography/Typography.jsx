@@ -4,7 +4,7 @@ import styles from "./Typography.module.scss";
 export const Typography = ({
     type = "p", // "h1","h2","h3","p","li","span"
     children,
-    size = "xs", // "md","m","l","xl","xxl"
+    size = "xs", // "s","md","m","l","xl","xxl"
     weight = "normal", //"bold"
     font = "lato", // "poiretOne"
     className,

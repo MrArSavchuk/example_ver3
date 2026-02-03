@@ -31,6 +31,14 @@
   }
 }
 
+.s {
+  font-size: var(--mobile-font-size-md);
+
+  @include tablet-m {
+    font-size: var(--font-size-s);
+  }
+}
+
 .md {
   font-size: var(--mobile-font-size-lg);
 
