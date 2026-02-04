@@ -4,9 +4,9 @@ import { Stack } from "@/shared/ui/Stack";
 import { Typography } from "@/shared/ui/Typography";
 import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 import { useTranslation } from "react-i18next";
-import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import styles from "./Contacts.module.scss";
+import { CONTACT_ITEMS } from "../contacts.config";
 
 
 export const Contacts = () => {
@@ -50,41 +50,12 @@ export const Contacts = () => {
     );
   };
 
-  const { phone, email, facebook, instagram, image } = contacts;
-
-  const contactItems = [
-      {
-          _id: "1",
-          icon: <Mail strokeWidth={1.25} size={40} />,
-          content: email,
-          href: `mailto:${email}`,
-      },
-      {
-          _id: "2",
-          icon: <Phone strokeWidth={1.25} size={40} />,
-          content: phone,
-          href: `tel:${phone}`,
-      },
-      {
-          _id: "3",
-          icon: <Facebook strokeWidth={1.25} size={40} />,
-          content: "Facebook",
-          href: facebook,
-      },
-      {
-          _id: "4",
-          icon: <Instagram strokeWidth={1.25} size={40} />,
-          content: "Instagram",
-          href: instagram,
-      }
-  ];
-
   return (
     <section id="contacts" className={styles.sectionContacts}>
       <Stack direction="column" gap="40">
 
         <Stack direction="column" gap="24">
-          <Typography type="h2" size="mobile-xl" className={styles.headingStyle}>
+          <Typography type="h2" weight="bold" className={styles.headingStyle}>
             {t("Contact Title")}
           </Typography>
 
@@ -96,18 +67,30 @@ export const Contacts = () => {
         <Stack direction="column" gap="16">
           {
             isLoading ? <Skeleton height="5vh" />
-            : contactItems.map(({ _id, icon, content, href }) => (
-            <Stack key={_id} gap="24" align="center">
-              {icon}
-              <Link href={href} ariaLabel={content}>
-                {content}
-              </Link>
-            </Stack>
-          ))}
+            : CONTACT_ITEMS.map(({ _id, icon: Icon, getHref, getText, external }) => {
+            
+              const href = getHref(contacts);
+              const text = getText(contacts);
+              
+              if (!href || !text) return null;
+
+              return (
+                <Stack key={_id} gap="24" align="center">
+                  <Icon strokeWidth={1.25} size={40} />
+                  <Link 
+                    href={href} 
+                    ariaLabel={text}
+                    external={external}
+                  >
+                    {text}
+                  </Link>
+                </Stack>
+              )
+          })}
         </Stack>
 
         <Stack className={styles.ctaLink} gap="24" align="center">
-          {!isLoading && <WhatsAppLink phone={phone} />}
+          {!isLoading && contacts.phone && <WhatsAppLink phone={contacts.phone} />}
         </Stack>
 
       </Stack>
@@ -116,7 +99,7 @@ export const Contacts = () => {
         <Skeleton height="700px"/> :        
           <picture className={styles.picture}>
               <img
-              src={image?.src}
+              src={contacts.image?.src}
               loading="lazy"
               alt="Olesya Martin"
               />

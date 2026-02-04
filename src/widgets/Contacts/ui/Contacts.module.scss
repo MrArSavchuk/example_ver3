@@ -4,9 +4,11 @@
 .sectionContacts{
     @include section-style;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    & {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
 
     @include mobile-xl {
         grid-template-columns: repeat( 2, 1fr);
