@@ -1,12 +1,12 @@
 import { Link } from "@/shared/ui/Link";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { Stack } from "@/shared/ui/Stack";
-import { Typography } from "@/shared/ui/Typography";
 import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import styles from "./Contacts.module.scss";
-import { CONTACT_ITEMS } from "../contacts.config";
+import { CONTACT_ITEMS } from "../lib/contacts.config";
+import { TypographyV2 } from "@/shared/ui/Typography";
 
 
 export const Contacts = () => {
@@ -43,9 +43,9 @@ export const Contacts = () => {
   if (error) {
     return (
       <section id="contacts" className={styles.sectionContacts}>
-        <Typography>
+        <TypographyV2>
           {t("Contacts Error")} 
-        </Typography>
+        </TypographyV2>
       </section>
     );
   };
@@ -55,13 +55,13 @@ export const Contacts = () => {
       <Stack direction="column" gap="40">
 
         <Stack direction="column" gap="24">
-          <Typography type="h2" weight="bold" className={styles.headingStyle}>
+          <TypographyV2 variant="h2" className={styles.headingStyle}>
             {t("Contact Title")}
-          </Typography>
+          </TypographyV2>
 
-          <Typography className={styles.textStyle}>
+          <TypographyV2 className={styles.textStyle}>
             {t("Contact Text")}
-          </Typography>
+          </TypographyV2>
         </Stack>
 
         <Stack direction="column" gap="16">
