@@ -1,6 +1,5 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
-import { ServicesSection } from "@/widgets/Services/ui"
 
 
 const MainPage = () => {
@@ -13,7 +12,6 @@ const MainPage = () => {
        >
          <h1>Olesya Martin</h1>
          <p>{t('Interior Designer')}</p>
-         <ServicesSection />
        </Stack>
      )
 }
