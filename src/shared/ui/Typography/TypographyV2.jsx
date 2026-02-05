@@ -14,8 +14,8 @@ export const TypographyV2 = ({
     variant = "body16", // h1 | h2 | h3 | body16 | body14 | body12
     children,
     as,               // переопределить тег (например для span или li)
-    weight = "normal", // normal | bold
-    font = "lato",     // lato | poiretOne
+    weight,           // normal | bold
+    font = "lato",   // lato | poiretOne
     tabularNumbers, // boolean - использовать табличные цифры
     noMargin = true, // boolean - убрать margin
     className,

@@ -1,7 +1,9 @@
 import { getStyles } from "../../lib";
 import styles from "./Typography.module.scss";
 
-/** @deprecated Используйте <TypographyV2 />. */
+/** 
+ * @deprecated
+ */
 export const Typography = ({
     type = "p", // "h1","h2","h3","p","span", "li"
     children,
