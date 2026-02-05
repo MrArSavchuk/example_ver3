@@ -2,10 +2,11 @@ import { useTranslation } from "react-i18next";
 import { ServicesItem } from "../ServiceItem/ServicesItem";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { Stack } from "@/shared/ui/Stack/Stack";
-import { Typography } from "@/shared/ui/Typography/Typography";
+import { TypographyV2 } from "@/shared/ui/Typography";
 import styles from "./ServicesSection.module.scss";
 import { useEffect, useState } from "react";
 import { servicesApi } from "@/features/ManageServices/api/servicesApi";
+import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 
 
 export const ServicesSection = () => {
@@ -41,15 +42,15 @@ export const ServicesSection = () => {
       className={styles.services}
     >
       <Stack direction="column" gap="16">
-        <Typography 
+        <TypographyV2 
           type="h2" size="s" weight="bold"
           className={styles.headingStyle}
         >
           {t("Services")}
-        </Typography>
-        <Typography className={styles.textStyle}>
+        </TypographyV2>
+        <TypographyV2 className={styles.textStyle}>
           {t("ServiceText")}
-        </Typography>
+        </TypographyV2>
       </Stack>
       <Stack 
         direction="column" gap="24" max
@@ -63,9 +64,9 @@ export const ServicesSection = () => {
 
         ) :
         error ? (
-          <Typography color="error">
+          <TypographyV2 color="error">
             {t("Error loading services")}: {error}
-          </Typography>
+          </TypographyV2>
         )
         :
         packages?.services?.map(item => (
@@ -84,10 +85,10 @@ export const ServicesSection = () => {
             className={styles.container}
             gap="8"
         >
-            <Typography>
+            <TypographyV2>
                 {t("CTA Section Text")}
-            </Typography>
-            {/* <WAButton phone={contacts?.phone}/> */}
+            </TypographyV2>
+            <WhatsAppLink phone={contacts?.phone}/>
         </Stack>
       </Stack>
       )
