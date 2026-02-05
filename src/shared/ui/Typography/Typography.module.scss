@@ -23,54 +23,58 @@
   font-weight: 700;
 }
 
-.xs {
-  font-size: var(--mobile-font-size-md);
+.h1 {
+  font-size: 32px;
 
   @include tablet-m {
-    font-size: var(--font-size-xs);
+    font-size: 32px;
   }
 }
 
-.md {
-  font-size: var(--mobile-font-size-lg);
+.h2 {
+  font-size: 20px;
 
   @include tablet-m {
-    font-size: var(--font-size-md);
+    font-size: 20px;
+  }
+}
+
+.h3 {
+  font-size: 16px;
+
+  @include tablet-m {
+    font-size: 16px;
+  }
+}
+
+.p {
+  font-size: 16px;
+
+  @include tablet-m {
+    font-size: 16px;
   }
 }
 
 .m {
-  font-size: var(--mobile-font-size-lg);
+  font-size: 16px;
 
   @include tablet-m {
-    font-size: var(--font-size-m);
+    font-size: 16px;
   }
 }
 
-.l {
-  font-size: var(--mobile-font-size-xl);
+.s {
+  font-size: 14px;
 
   @include tablet-m {
-    font-size: var(--font-size-l);
+    font-size: 14px;
   }
 }
 
-.xl {
-  font-size: var(--mobile-font-size-xl);
+.xs {
+  font-size: 12px;
 
   @include tablet-m {
-    font-size: var(--font-size-xl);
+    font-size: 12px;
   }
-}
-
-.xxl {
-  font-size: var(--mobile-font-size-xl);
-
-  @include tablet-m {
-    font-size: var(--font-size-xxl);
-  }
-}
-
-h1 span {
-  color: var(--red-color);
 }
