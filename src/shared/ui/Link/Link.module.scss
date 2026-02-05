@@ -1,0 +1,11 @@
+.link {
+  position: relative;
+  font-family: var(--font-lato);
+  font-weight: 400;
+  color: var(--black-color);
+  text-decoration: none;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
