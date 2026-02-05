@@ -11,6 +11,7 @@ import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 
 export const ServicesSection = () => {
     const { t, i18n } = useTranslation();
+    const phone = "+1234567890"; // Replace with actual phone number or fetch from config
 
     const [packages, setPackages] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +44,7 @@ export const ServicesSection = () => {
     >
       <Stack direction="column" gap="16">
         <TypographyV2 
-          type="h2" size="s" weight="bold"
+          variant="h2"  weight="bold"
           className={styles.headingStyle}
         >
           {t("Services")}
@@ -88,7 +89,7 @@ export const ServicesSection = () => {
             <TypographyV2>
                 {t("CTA Section Text")}
             </TypographyV2>
-            <WhatsAppLink phone={contacts?.phone}/>
+            <WhatsAppLink phone={phone}/>
         </Stack>
       </Stack>
       )

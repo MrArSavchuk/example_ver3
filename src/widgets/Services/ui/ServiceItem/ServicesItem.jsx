@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import { TypographyV2 } from "@/shared/ui/Typography";
+import { Typography } from "@/shared/ui/Typography";
 import { Stack } from "@/shared/ui/Stack";
 import desktopBadge from "@/shared/assets/images/most-popular-desktop.webp";
 import { ChevronDown, Minus, Plus } from "lucide-react";
@@ -46,9 +46,9 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
             size={48}
             className={isOpen ? styles.opened : styles.closed}
           />
-          <TypographyV2 className={styles.title} font="poiretOne">
+          <Typography className={styles.title} font="poiretOne">
             {titleDisplay}
-          </TypographyV2>
+          </Typography>
         </Stack>
 
         {is3DVisionPack && (
@@ -60,13 +60,13 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
         )}
 
         <Stack gap="32">
-          <TypographyV2
+          <Typography
             className={styles.desktopPrice}
             size="md"
             font="poiretOne"
           >
             {priceDisplay}
-          </TypographyV2>
+          </Typography>
           {children}
           {isOpen ? (
             <Minus
@@ -86,17 +86,17 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
 
       {isOpen && (
         <Stack direction="column" gap="16" className={styles.list}>
-          <TypographyV2 className={styles.content}>
+          <Typography className={styles.content}>
             {contentDisplay}
-          </TypographyV2>
+          </Typography>
           
-          <TypographyV2
+          <Typography
             className={styles.mobilePrice}
             size="md"
             font="poiretOne"
           >
             {priceDisplay}
-          </TypographyV2>
+          </Typography>
         </Stack>
       )}
     </div>
