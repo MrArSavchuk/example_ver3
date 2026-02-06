@@ -54,15 +54,12 @@
   }
 
   .content {
-    font-size: var(--font-size-xs);
     text-indent: var(--text-indent);
   }
 
   .mobilePrice {
     display: block;
     color: var(--text-color);
-    font-family: var(--font-lato);
-    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     text-align: end;
 
@@ -84,6 +81,7 @@
     @include tablet-l {
       display: block;
       text-align: end;
+      font-size: var(--font-size-sm);
     }
   }
 

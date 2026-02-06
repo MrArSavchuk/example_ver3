@@ -1,9 +1,10 @@
-import React, { memo, useState } from "react";
-import { Typography } from "@/shared/ui/Typography";
+import { memo, useState } from "react";
 import { Stack } from "@/shared/ui/Stack";
-import desktopBadge from "@/shared/assets/images/most-popular-desktop.webp";
+import desktopBadge from "@/shared/assets/images/most-popular.webp";
 import { ChevronDown, Minus, Plus } from "lucide-react";
 import styles from "./ServicesItem.module.scss";
+import { TypographyV2 } from "@/shared/ui/Typography";
+
 
 export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
   if (!item) return null;
@@ -46,9 +47,9 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
             size={48}
             className={isOpen ? styles.opened : styles.closed}
           />
-          <Typography className={styles.title} font="poiretOne">
+          <TypographyV2 className={styles.title} font="poiretOne">
             {titleDisplay}
-          </Typography>
+          </TypographyV2>
         </Stack>
 
         {is3DVisionPack && (
@@ -60,13 +61,12 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
         )}
 
         <Stack gap="32">
-          <Typography
+          <TypographyV2
             className={styles.desktopPrice}
-            size="md"
             font="poiretOne"
           >
             {priceDisplay}
-          </Typography>
+          </TypographyV2>
           {children}
           {isOpen ? (
             <Minus
@@ -86,17 +86,16 @@ export const ServicesItem = memo(({ item, defaultOpen, children, value }) => {
 
       {isOpen && (
         <Stack direction="column" gap="16" className={styles.list}>
-          <Typography className={styles.content}>
+          <TypographyV2 className={styles.content}>
             {contentDisplay}
-          </Typography>
+          </TypographyV2>
           
-          <Typography
+          <TypographyV2
             className={styles.mobilePrice}
-            size="md"
             font="poiretOne"
           >
             {priceDisplay}
-          </Typography>
+          </TypographyV2>
         </Stack>
       )}
     </div>

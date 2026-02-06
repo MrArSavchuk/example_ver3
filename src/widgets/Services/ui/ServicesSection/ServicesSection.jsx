@@ -11,34 +11,34 @@ import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 
 export const ServicesSection = () => {
     const { t, i18n } = useTranslation();
-    const phone = "+1234567890"; // Replace with actual phone number or fetch from config
+    const phone = "+1234567890"; 
 
-    const [packages, setPackages] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [packages, setPackages] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const fetchServices = async () => {
-        setIsLoading(true);
-        setError(null);
-        
-        try {  
-          const lang = i18n.language;   
-          const data = await servicesApi(lang);
-          setPackages(data);
-        } catch (err) { 
-            console.error('Error fetching services:', err);
-            setError(err.message || 'Something went wrong');
-        } finally {
-            setIsLoading(false);
-        }
-    };
+  const fetchServices = async () => {
+    setIsLoading(true);
+    setError(null);
 
-    useEffect(() => {
-        fetchServices();
-    }, [i18n.language]);
+    try {
+      const lang = i18n.language;
+      const data = await servicesApi(lang);
+      setPackages(data);
+    } catch (err) {
+      console.error('Error fetching services:', err);
+      setError(err.message || 'Something went wrong');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return (
-    <Stack tag="section" id="services-and-prices" 
+  useEffect(() => {
+    fetchServices();
+  }, [i18n.language]);
+
+  return (
+    <Stack tag="section" id="services-and-prices"
       direction="column" gap="32"
       className={styles.services}
     >
@@ -53,15 +53,15 @@ export const ServicesSection = () => {
           {t("ServiceText")}
         </TypographyV2>
       </Stack>
-      <Stack 
+      <Stack
         direction="column" gap="24" max
         className={styles.servicesItem}
       >
-        {isLoading ? 
-        (
-          Array.from({ length: 5 }).map((_, i) => (
-            <Skeleton key={i} height="10vh" /> 
-          ))
+        {isLoading ?
+          (
+            Array.from({ length: 5 }).map((_, i) => (
+              <Skeleton key={i} height="10vh" />
+            ))
 
         ) :
         error ? (
@@ -92,5 +92,5 @@ export const ServicesSection = () => {
             <WhatsAppLink phone={phone}/>
         </Stack>
       </Stack>
-      )
+  )
 }
