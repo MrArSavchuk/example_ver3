@@ -1,0 +1,26 @@
+@use "@/app/styles/vars.scss" as *;
+@use "@/app/styles/media-queries.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--background-color);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  @include mobile-xl {
+    padding: 20px 40px;
+  }
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+
+  @include mobile-xl {
+    height: 60px;
+  }
+}

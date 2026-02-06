@@ -1,0 +1,61 @@
+@use "@/app/styles/mixin.scss" as *;
+@use "@/app/styles/media-queries.scss" as *;
+@use "@/app/styles/fonts.scss" as *;
+
+.footerContainer{
+    @include section-style;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-color);
+}
+
+.desktop{
+    display: none;
+}
+.footerText{
+    text-align: end;
+    @include mobile-l {
+    flex-direction: row;
+    }
+
+    @include tablet-l { 
+        flex-direction: column;
+        align-items: end;
+    }
+}
+.footerLinkContainer {
+    flex-direction: column-reverse;
+    @include tablet-l {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+    }
+}
+.textContainer{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-lato);
+    font-size: var(--font-size-xs);
+}
+.textSegment{
+    white-space: nowrap;
+    min-width: 0;
+}
+
+p {
+    font-family: var(--font-lato);
+    font-size: var(--font-size-xs);
+}
+
+@include tablet-l {
+    .desktop{
+        display: flex;
+    }
+    .footerContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .logo {
+        width: auto;
+        height: 110px;
+    }
+}
