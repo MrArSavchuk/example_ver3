@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { Stack } from "@/shared/ui/Stack";
-import { Typography } from "@/shared/ui/Typography"; 
 import { Number } from "@/shared/ui/Number";
 import { Line } from "@/shared/ui/Line";
 import { steps } from "../lib/data";
 import processImg from "@/shared/assets/images/process.webp";
-import styles from "./Process.module.scss";;
+import styles from "./Process.module.scss";
+import { TypographyV2 } from "@/shared/ui/Typography";
+;
 
 export const Process = () => {
     const { t, i18n } = useTranslation();
@@ -16,21 +17,19 @@ export const Process = () => {
             className={styles.sectionProcess} 
         >
             <Stack direction="column" gap="16">
-                <Typography 
-                    type="h2" 
-                    size="s"
+                <TypographyV2 
+                    variant="h2" 
                     weight="bold"
                     className={styles.headingStyle}
                 >
                     {t("HowItWorks")} 
-                </Typography>
-                <Typography 
+                </TypographyV2>
+                <TypographyV2 
                     className={styles.textStyle}
-                    type="p" 
-                    size="xs"
+                    variant="body16" 
                     >
                     {t("How It Works Text")} 
-                </Typography>
+                </TypographyV2>
             </Stack>
 
             <Stack 
@@ -49,21 +48,19 @@ export const Process = () => {
                                 {i < steps.length - 1 && <Line/>}
                             </Stack>
                             <Stack direction="column" gap="16"> 
-                                <Typography 
-                                    type="h3"
-                                    size="xs" 
+                                <TypographyV2 
+                                    variant="h3"
                                     weight="bold"
                                 >
                                     {t(title)} 
-                                </Typography>
-                                <Typography 
-                                    type="p" 
-                                    size="xs"
+                                </TypographyV2>
+                                <TypographyV2
+                                    variant="body16" 
                                     lang={i18n.language} 
                                     className={styles.textProccess}
                                 >
                                     {t(text)} 
-                                </Typography>
+                                </TypographyV2>
                             </Stack>
                         </Stack>)}
                 </Stack>
