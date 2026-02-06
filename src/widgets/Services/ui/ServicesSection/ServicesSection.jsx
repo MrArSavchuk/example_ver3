@@ -11,9 +11,9 @@ import { WhatsAppLink } from "@/shared/ui/WhatsAppLink";
 
 export const ServicesSection = () => {
     const { t, i18n } = useTranslation();
-    const phone = "+1234567890"; 
 
   const [packages, setPackages] = useState({});
+  const [contacts, setContacts] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -33,8 +33,21 @@ export const ServicesSection = () => {
     }
   };
 
+  const fetchContacts = async () => {
+    try {
+      const response = await fetch("https://interior-designer-backend-k9ub.onrender.com/api/contacts");
+      if (!response.ok) throw new Error("Failed to fetch contacts");
+      const data = await response.json();
+      setContacts(data);
+    }
+      catch (err) {
+        console.error('Error fetching contacts:', err);
+      }
+  };
+
   useEffect(() => {
     fetchServices();
+    fetchContacts();
   }, [i18n.language]);
 
   return (
@@ -89,7 +102,7 @@ export const ServicesSection = () => {
             <TypographyV2>
                 {t("CTA Section Text")}
             </TypographyV2>
-            <WhatsAppLink phone={phone}/>
+            <WhatsAppLink phone={contacts?.phone} />
         </Stack>
       </Stack>
   )
