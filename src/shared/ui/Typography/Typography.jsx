@@ -1,29 +1,26 @@
 import { getStyles } from "../../lib";
 import styles from "./Typography.module.scss";
 
+/** 
+ * @deprecated
+ */
 export const Typography = ({
-    type = "p", // "h1","h2","h3","p","li","span"
+    type = "p", // "h1","h2","h3","p","span", "li"
     children,
-    size = "xs", // "s","md","m","l","xl","xxl"
+    size = "m", // m | s | xs (ТОЛЬКО для p / span)
     weight = "normal", //"bold"
     font = "lato", // "poiretOne"
     className,
     ...otherProps
 }) => {
 
-  const mapTextTag = {
-    h1: "h1",
-    h2: "h2",
-    h3: "h3",
-    p: "p",
-    li: "li",
-    span: "span",
-  };
+  const TextTag = type;
 
-  const TextTag = mapTextTag[type];
+  const isTextWithSize = type === "p" || type === "span";
 
   const additional = [
-    styles[size],
+    styles[type],
+    isTextWithSize && styles[size],
     styles[weight],
     styles[font],
     className,

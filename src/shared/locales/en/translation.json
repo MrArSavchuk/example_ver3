@@ -2,8 +2,12 @@
   "Interior Designer": "Interior Designer",
   "About": "About",
   "Portfolio": "Portfolio",
-  "Services": "Services",
 
+  "Services": "Services and Prices",
+  "ServiceText" : "Explore my services and prices. I offer flexible options to suit everyone's needs.",
+
+  "CTA Section Text": "Not sure what suits you best?",
+  
   "HowItWorks": "How it works",
   "How It Works Text": "Learn about my process. I guide you from idea to realization to ensure a smooth and stress-free experience.",
   "Step 1 Title": "Researching and understanding",
@@ -18,6 +22,14 @@
   "Step 5 Text": "Including plans, drawings, and material specifications, preparing the budget, and procurement.",
 
   "Review": "Review",
-  "Contacts": "Contacts"
+  "Contacts": "Contacts",
+
+  "Contact Title": "Contact",
+  "Contact Text": "Get in touch with me for a consultation or to schedule a meeting. I'm always open to new projects and connections.",
+  "CTA Link": "Send a WhatsApp Message Now",
+  "WhatsApp Message": "WhatsApp Message",
+  "Contacts Error": "Unable to load contacts"
+
+
 }
  

@@ -1,0 +1,123 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.servicesItem {
+  border-top: 1px solid var(--gray-color);
+  padding-top: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+
+  .titleContainer {
+    position: relative;
+  }
+
+  .title {
+    font-size: var(--font-size-sm);
+    text-align: start !important;
+    text-transform: var(--text-uppercase);
+
+    @include mobile-xl {
+      font-size: var(--font-size-m);
+    }
+  }
+
+  .list {
+    color: var(--text-color);
+    background-color: var(--gray-light-color);
+    padding: 1rem;
+    font-size: var(--font-size-xs);
+    cursor: default;
+
+    @include tablet-l {
+      list-style-type: none;
+      line-height: 2;
+      overflow: hidden;
+      animation: slideDown 0.3s ease forwards;
+    }
+  }
+
+  .opened,
+  .closed {
+    display: none;
+
+    @include tablet-l {
+      display: block;
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .closed {
+    @include tablet-l {
+      transform: none;
+    }
+  }
+
+  .content {
+    text-indent: var(--text-indent);
+  }
+
+  .mobilePrice {
+    display: block;
+    color: var(--text-color);
+    font-weight: var(--font-weight-semibold);
+    text-align: end;
+
+    @include tablet-l {
+      display: none;
+    }
+  }
+
+
+  .svgMobile {
+    @include tablet-l {
+      display: none;
+    }
+  }
+
+  .desktopPrice {
+    display: none;
+
+    @include tablet-l {
+      display: block;
+      text-align: end;
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  .badge {
+    position: absolute;
+    left: 10px;
+    top: -32px;
+    width: 60px;
+
+    @include tablet-l {
+      left: 80px;
+      top: -37px;
+      width: 100px;
+    }
+  }
+
+  @keyframes slideDown {
+    0% {
+      max-height: 0;
+      opacity: 0;
+    }
+    25% {
+      max-height: 125px;
+      opacity: 0.25;
+    }
+    50% {
+      max-height: 250px;
+      opacity: 0.5;
+    }
+    75% {
+      max-height: 375px;
+      opacity: 0.75;
+    }
+    100% {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+}
