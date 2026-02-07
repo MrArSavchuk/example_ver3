@@ -9,22 +9,23 @@
     text-transform: var(--text-uppercase);
 }
 
-.textProccess, .textStyle {
+.textProccess,
+.textStyle {
     text-indent: var(--text-indent);
 }
 
 .textWithHyphens {
     text-align: justify;
-    overflow-wrap: break-word; 
-    word-break: break-word;  
-    hyphens: auto;             
+    hyphens: auto;
 }
 
 .picture {
     width: 100%;
+
     @include tablet-m {
         min-width: 550px;
     }
+
     img {
         width: 100%;
         object-fit: contain;
