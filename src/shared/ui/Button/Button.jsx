@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { getStyles } from "../../lib/getStyle/getStyle";
+import { getStyles } from "@/shared/lib";
 import styles from "./Button.module.scss";
 import { Ellipsis } from "lucide-react";
 

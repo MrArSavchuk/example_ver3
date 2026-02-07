@@ -1,5 +1,7 @@
 import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
+import { Contacts } from "@/widgets/contacts"
+import { ServicesSection } from "@/widgets/Services/ui"
 
 
 const MainPage = () => {
@@ -10,8 +12,8 @@ const MainPage = () => {
          align="center"
          gap="16"
        >
-         <h1>Olesya Martin</h1>
-         <p>{t('Interior Designer')}</p>
+         <ServicesSection/>
+         <Contacts />
        </Stack>
      )
 }
