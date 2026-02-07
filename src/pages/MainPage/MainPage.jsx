@@ -2,7 +2,7 @@ import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
 import { Contacts } from "@/widgets/contacts"
 import { ServicesSection } from "@/widgets/Services/ui"
-import { Process } from "../../widgets/Process/ui/Process"
+import { Process } from "@/widgets/Process"
 
 
 const MainPage = () => {
