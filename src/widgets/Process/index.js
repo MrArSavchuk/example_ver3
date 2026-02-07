@@ -1,1 +1,1 @@
-export * from "./Process";
+export { Process } from "./ui/Process";

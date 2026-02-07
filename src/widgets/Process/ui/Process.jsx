@@ -25,8 +25,8 @@ export const Process = () => {
                     {t("HowItWorks")} 
                 </TypographyV2>
                 <TypographyV2 
-                    className={styles.textStyle}
                     variant="body16" 
+                    className={`${styles.textStyle} ${styles.textWithHyphens}`}
                     >
                     {t("How It Works Text")} 
                 </TypographyV2>
@@ -57,7 +57,7 @@ export const Process = () => {
                                 <TypographyV2
                                     variant="body16" 
                                     lang={i18n.language} 
-                                    className={styles.textProccess}
+                                    className={`${styles.textProccess} ${styles.textWithHyphens}`}
                                 >
                                     {t(text)} 
                                 </TypographyV2>

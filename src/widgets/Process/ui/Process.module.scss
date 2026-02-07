@@ -13,9 +13,16 @@
     text-indent: var(--text-indent);
 }
 
+.textWithHyphens {
+    text-align: justify;
+    overflow-wrap: break-word; 
+    word-break: break-word;  
+    hyphens: auto;             
+}
+
 .picture {
     width: 100%;
-    @include tablet-l {
+    @include tablet-m {
         min-width: 550px;
     }
     img {
@@ -24,9 +31,8 @@
     }
 }
 
-
 .container {
-    @include tablet-l {
+    @include tablet-m {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
