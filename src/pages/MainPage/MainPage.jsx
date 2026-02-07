@@ -1,21 +1,23 @@
 import { Stack } from "@/shared/ui/Stack"
-import { useTranslation } from "react-i18next"
 import { Contacts } from "@/widgets/contacts"
 import { ServicesSection } from "@/widgets/Services/ui"
+import { Header } from "@/widgets/Header"
+import { Footer } from "@/widgets/Footer"
 
 
 const MainPage = () => {
-   const { t } = useTranslation()
-     return (
-       <Stack
-         direction="column"
-         align="center"
-         gap="16"
-       >
-         <ServicesSection/>
-         <Contacts />
-       </Stack>
-     )
+  return (
+    <Stack
+      direction="column"
+      align="center"
+      gap="16"
+    >
+      <Header />
+      <ServicesSection />
+      <Contacts />
+      <Footer />
+    </Stack>
+  )
 }
 
 export default MainPage;

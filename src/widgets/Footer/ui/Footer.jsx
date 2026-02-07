@@ -5,36 +5,32 @@ import { useTranslation } from "react-i18next";
 import { Stack } from "@/shared/ui/Stack";
 import style from "./Footer.module.scss";
 
-export const Footer = forwardRef(({ isShow = false }, ref) => {
+export const Footer = forwardRef(() => {
     const { t } = useTranslation();
-    const currentYear  = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
     return (
         <footer
             id="footer"
             className={style.footerContainer}
-            ref={ref}
         >
-            {
-                isShow &&
-                <Stack
-                    justify="between"
-                    align="center"
-                    className={style.desktop}
-                >
-                    <img
-                        src={logo}
-                        loading="lazy" 
-                        alt="design studio logo Olesya Martin"
-                        className={style.logo}
-                    />
-                    <Navbar />
-                </Stack>
-            }
+            <Stack
+                justify="between"
+                align="center"
+                className={style.desktop}
+            >
+                <img
+                    src={logo}
+                    loading="lazy"
+                    alt="design studio logo Olesya Martin"
+                    className={style.logo}
+                />
+                <Navbar />
+            </Stack>
 
-            <Stack 
-                justify="center" 
-                align="center" 
+            <Stack
+                justify="center"
+                align="center"
                 gap="16"
                 className={style.footerLinkContainer}
             >
@@ -43,10 +39,10 @@ export const Footer = forwardRef(({ isShow = false }, ref) => {
                         © {currentYear} {t("copyrightName")}
                     </span>
                 </div>
-                <Stack 
-                    direction="column" 
-                    gap="16" 
-                    align="center" 
+                <Stack
+                    direction="column"
+                    gap="16"
+                    align="center"
                     className={style.footerText}
                 >
                     <p>
