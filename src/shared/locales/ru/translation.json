@@ -30,6 +30,17 @@
   "Contact Text": "Свяжитесь со мной для консультации или назначения встречи. Я всегда открыта для новых проектов и контактов.",
   "CTA Link": "Напишите мне в WhatsApp",
   "WhatsApp Message": "WhatsApp сообщение",
-  "Contacts Error": "Не удалось загрузить контакты"
+  "Contacts Error": "Не удалось загрузить контакты",
+
+  "Welcome": "Добро пожаловать",
+  "Server connection error": "Ошибка соединения с сервером",
+  "Invalid username or password": "Неверный логин или пароль",
+  "Please log in to access your admin dashboard and manage the system effectively.": "Пожалуйста, войдите в систему для доступа к панели администратора и управления системой.",
+  "Login": "Логин",
+  "Username is required": "Логин обязателен для заполнения",
+  "Password": "Пароль",
+  "Password is required": "Пароль обязателен для заполнения",
+  "Sign in": "Войти",
+  "Logo": "Логотип"
 }
 

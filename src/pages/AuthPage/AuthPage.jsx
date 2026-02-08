@@ -1,14 +1,8 @@
-import { Stack } from "@/shared/ui/Stack"
+import { AdminLoginForm } from "@/features/AdminAuth";
 
 const AuthPage = () => {
      return (
-       <Stack
-         direction="column"
-         align="center"
-         gap="16"
-       >
-         <p>Страница авторизации</p>
-       </Stack>
+         <AdminLoginForm />
      )
 }
 
