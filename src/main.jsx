@@ -6,14 +6,16 @@ import "./shared/config/i18n";
 import { Provider } from "react-redux";
 import { store } from './app/providers/store/store';
 import { BrowserRouter } from 'react-router-dom';
-
+import { AuthProvider } from './features/AdminAuth/hooks/useAuth';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Provider store = {store}>
-        <App />
-    </Provider>
+      <Provider store={store}>
+        <AuthProvider> 
+          <App />
+        </AuthProvider>
+      </Provider>
     </BrowserRouter>
   </StrictMode>,
 )

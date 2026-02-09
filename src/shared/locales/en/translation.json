@@ -28,7 +28,18 @@
   "Contact Text": "Get in touch with me for a consultation or to schedule a meeting. I'm always open to new projects and connections.",
   "CTA Link": "Send a WhatsApp Message Now",
   "WhatsApp Message": "WhatsApp Message",
-  "Contacts Error": "Unable to load contacts"
+  "Contacts Error": "Unable to load contacts",
+
+  "Welcome": "Welcome",
+  "Server connection error": "Server connection error",
+  "Invalid username or password": "Invalid username or password",
+  "Please log in to access your admin dashboard and manage the system effectively.": "Please log in to access your admin dashboard and manage the system effectively.",
+  "Login": "Login",
+  "Username is required": "Username is required",
+  "Password": "Password",
+  "Password is required": "Password is required",
+  "Sign in": "Sign in",
+  "Logo": "Logo"
 
 
 }
