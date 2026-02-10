@@ -1,0 +1,47 @@
+@use "@/app/styles/media-queries.scss" as *;
+@use "@/app/styles/mixin.scss" as *;
+@use "@/app/styles/vars.scss" as *;
+
+.sectionAbout{
+    @include section-style;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include mobile-xl {
+        grid-template-columns: repeat( 2, 1fr);
+        justify-content: space-between;
+    }
+}
+
+
+.picture {
+    width: 100%;
+    img{
+        width: 100%;
+        object-fit: contain;
+
+        @include mobile-xl {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.textPadding{
+    min-height: auto;
+    p {
+        text-indent: var(--text-indent);
+    }
+}
+
+.text {
+    text-indent: var(--text-indent);
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}

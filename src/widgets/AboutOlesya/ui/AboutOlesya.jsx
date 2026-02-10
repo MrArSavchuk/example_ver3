@@ -1,15 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { Stack } from "@/shared/ui/Stack";
-import { TextArea } from "@shared/ui/TextArea";
+import { TypographyV2 }  from "@/shared/ui/Typography/TypographyV2";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Quotation } from "@/shared/assets/svg/Quotation";
-import { getImageUrl } from "@/shared/helper/getImageUrl";
+// import { getImageUrl } from "@/../shared/lib/getImageUrl/getImageUrl";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import style from "./AboutOlesya.module.scss";
 
-// https://interior-designer-backend-k9ub.onrender.com/api/about?lang=en
 
 export const AboutOlesya = () => {
     const { t, i18n } = useTranslation();
@@ -28,7 +27,7 @@ export const AboutOlesya = () => {
         const getAboutUs = async () => {
             try {
                 setIsLoading(true);
-                setError(null);
+                setError(null); 
 
                 const response = await fetch('https://interior-designer-backend-k9ub.onrender.com/api/about?lang=${i18n.language}')
 
@@ -39,6 +38,7 @@ export const AboutOlesya = () => {
                 const data = await response.json();
 
                 setAboutUs(data);
+
             } catch(err) {
                 setError(err);
                 setIsLoading(false)
@@ -64,23 +64,35 @@ export const AboutOlesya = () => {
             {isLoading ? 
                 <Skeleton height="400px"/> :
                 <Stack direction="column" gap="32">
-                    <Stack direction="column" className={style.textPadding} gap={8}>
+                    <Stack direction="column" className={style.textPadding} gap={8} >
                     {description?.text
                         ?.split("\n")
                         .map((paragraph, index) => (
+                            <TypographyV2 
+                            key={index}
+                            variant="body14"
+                            lang={description.lang}
+                            className={style.text}
+                            >
+                                {paragraph}
+                            </TypographyV2>
 
-                        <Text lang={i18n.language} key={index} mb={4}>
-                            {paragraph}
-                        </Text>
                     ))}
                     </Stack>
 
                     <div className={style.quoteContainer} data-aos="fade-left">
                         <Stack direction="column" gap="24">
+
                             <Quotation/>
-                            <Text font="poiretOne" size="md">
+
+                            <TypographyV2
+                            variant="body16"
+                            font="poiretOne"
+                            className={style.text}
+                            >
                                 {t("Quote")}
-                            </Text>
+                            </TypographyV2>
+
                         </Stack>
                     </div>
                 </Stack>

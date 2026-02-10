@@ -1,3 +1,1 @@
-import { AboutOlesya } from "./ui/AboutOlesya";
-
-export { AboutOlesya }
+export { AboutOlesya } from "./ui/AboutOlesya";

@@ -1,0 +1,103 @@
+@use "@/app/styles/media-queries.scss" as *;
+@use "@/app/styles/mixin.scss" as *;
+
+.containerMobile{
+    @include section-style;
+
+    @include tablet-m {
+        display: none;
+    }
+}
+
+.mobileTitle{   
+    text-transform: var(--text-uppercase);
+    font-size: 36px;
+
+    span {
+    color: var(--red-color);
+    }
+
+    @include mobile-l {
+        font-size: 3rem;
+    }
+
+    @include tablet-m {
+        display: none;
+    }
+}
+
+.textAbout {
+    text-indent: var(--text-indent);
+    text-align: justify;
+    hyphens:auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.buttonMobile{
+    color: var(--red-color);
+    font-size: var( --font-size-sm);
+    font-family: var(--font-lato);
+    @include tablet-m {
+        display: none;
+    }
+}
+.image{
+    width: 100%;
+
+    @include tablet-m {
+        width: 60%;
+    }
+
+    @include tablet-l {
+        z-index: -1;
+        width: 70%;
+    }
+}
+.containerDesktop{
+    display: none;
+
+    @include tablet-m {
+        @include section-style;
+        display: flex;
+        position: relative;
+
+        margin-top: 5rem;
+    }
+
+}
+
+    .desktopTitle {
+        display: none;
+
+        span {
+        color: var(--red-color);
+        }
+
+        @include tablet-m {
+        display: flex;
+        position: absolute;
+        left: 0px;
+        top: -90px;
+        text-transform: var(--text-uppercase);
+        white-space: nowrap;
+        }
+
+        @include tablet-l {
+            font-size: 7rem;
+            top: -80px;
+        }
+
+        @include desktop-m {
+            font-size: var(--font-size-xxl);
+            top: -80px;
+        }
+    }
+
+    .buttonDesktop{
+        @include tablet-m {
+            color: var(--text-color);
+            font-size: var(--font-size-sm);
+            font-family: var(--font-lato);
+        }
+    }
