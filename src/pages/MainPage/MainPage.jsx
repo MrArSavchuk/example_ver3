@@ -2,8 +2,6 @@ import { Stack } from "@/shared/ui/Stack"
 import { useTranslation } from "react-i18next"
 import { Contacts } from "@/widgets/contacts"
 import { ServicesSection } from "@/widgets/Services/ui"
-import { HeroSection } from "@/widgets/HeroSection/ui/HeroSection"
-import { AboutOlesya } from "../../widgets/AboutOlesya/ui/AboutOlesya"
 
 
 const MainPage = () => {
@@ -17,6 +15,7 @@ const MainPage = () => {
          <HeroSection />
          <AboutOlesya />
          <ServicesSection/>
+         <Process />
          <Contacts />
        </Stack>
      )
