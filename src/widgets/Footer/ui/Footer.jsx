@@ -21,7 +21,6 @@ export const Footer = forwardRef(() => {
             >
                 <img
                     src={logo}
-                    loading="lazy"
                     alt="design studio logo Olesya Martin"
                     className={style.logo}
                 />

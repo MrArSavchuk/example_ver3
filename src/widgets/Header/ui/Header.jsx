@@ -22,6 +22,7 @@ export const Header = () => {
                 alt="design studio logo Olesya Martin"
                 className={style.logo}
             />
+        
             {isDesktop ? (
                 <>
                     <Navbar />

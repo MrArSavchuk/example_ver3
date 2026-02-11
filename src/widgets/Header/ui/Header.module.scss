@@ -1,10 +1,13 @@
 @use "@/app/styles/vars.scss" as *;
 @use "@/app/styles/media-queries.scss" as *;
+@use "@/app/styles/fonts.scss" as *;
+@use "@/app/styles/mixin.scss" as *;
 
 .header {
-  width: 100%;
-  padding: 15px 20px;
+  @include section-style;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+  font-family: var(--font-lato);
 
   @include mobile-xl {
     padding: 20px 40px;
@@ -12,10 +15,13 @@
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
   width: auto;
 
-  @include mobile-xl {
-    height: 60px;
+  @include tablet-l {
+  height: 110px;
   }
 }
+
+ 
+
