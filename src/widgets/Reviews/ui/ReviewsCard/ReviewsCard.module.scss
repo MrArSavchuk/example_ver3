@@ -1,0 +1,10 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+
+.text {
+  text-indent: var(--text-indent);
+  overflow: auto;
+  text-align: justify;
+  hyphens: auto;
+}
+

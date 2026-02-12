@@ -1,0 +1,16 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.line{
+    width: 1px;
+    background-color: var(--gray-color);
+    display: none;
+
+    @include tablet-l {
+        display: flex;
+        align-self: center;
+        height: 30px;
+    }
+    @include tablet-l {
+        height: 60px;
+    }
+}

@@ -6,6 +6,18 @@
   "ServiceText": "Explore my services and prices. I offer flexible options to suit everyone's needs.",
   "CTA Section Text": "Not sure what suits you best?",
   "HowItWorks": "How it works",
+  "How It Works Text": "Learn about my process. I guide you from idea to realization to ensure a smooth and stress-free experience.",
+  "Step 1 Title": "Researching and understanding",
+  "Step 1 Text": "The client's needs, discussing their preferences, requirements, budget, timelines, and expectations for the project.",
+  "Step 2 Title": "Creating an interior design concept,",
+  "Step 2 Text": "We provide input on the use of space, determine the best layout, select the best way to remodel or build an addition to a house, offer a style, color palette, furniture, offer suggestions on decorative elements.",
+  "Step 3 Title": "Developing a preliminary design",
+  "Step 3 Text": "With initial sketches or 3D visualizations.",
+  "Step 4 Title": "Reviewing with the client ",
+  "Step 4 Text": "And making revisions as necessary.",
+  "Step 5 Title": "Finalizing the design, ",
+  "Step 5 Text": "Including plans, drawings, and material specifications, preparing the budget, and procurement.",
+
   "Review": "Review",
   "Contacts": "Contacts",
   "copyrightName": "Olesya Martin. All rights reserved",
@@ -17,5 +29,24 @@
   "Contact Text": "Get in touch with me for a consultation or to schedule a meeting. I'm always open to new projects and connections.",
   "CTA Link": "Send a WhatsApp Message Now",
   "WhatsApp Message": "WhatsApp Message",
+<<<<<<< HEAD
   "Contacts Error": "Unable to load contacts"
 }
+=======
+  "Contacts Error": "Unable to load contacts",
+
+  "Welcome": "Welcome",
+  "Server connection error": "Server connection error",
+  "Invalid username or password": "Invalid username or password",
+  "Please log in to access your admin dashboard and manage the system effectively.": "Please log in to access your admin dashboard and manage the system effectively.",
+  "Login": "Login",
+  "Username is required": "Username is required",
+  "Password": "Password",
+  "Password is required": "Password is required",
+  "Sign in": "Sign in",
+  "Logo": "Logo"
+
+
+}
+ 
+>>>>>>> main
