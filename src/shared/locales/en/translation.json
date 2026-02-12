@@ -29,10 +29,6 @@
   "Contact Text": "Get in touch with me for a consultation or to schedule a meeting. I'm always open to new projects and connections.",
   "CTA Link": "Send a WhatsApp Message Now",
   "WhatsApp Message": "WhatsApp Message",
-<<<<<<< HEAD
-  "Contacts Error": "Unable to load contacts"
-}
-=======
   "Contacts Error": "Unable to load contacts",
 
   "Welcome": "Welcome",
@@ -48,5 +44,4 @@
 
 
 }
- 
->>>>>>> main
+
