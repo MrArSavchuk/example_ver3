@@ -17,7 +17,7 @@ export const HeroSection = () => {
     }, []);
 
     return (
-        <section>
+        <section id="hero_section">
             <Stack
                 id="textContainer"
                 direction="column"

@@ -20,7 +20,7 @@ export const NavbarMobile = () => {
       align="center"
       className={style.navbarMobile}
       aria-label="Main Navigation"
-      max
+      fullWidth
     >
       {isMobile && (
         <BurgerButton
