@@ -1,5 +1,5 @@
-import { HashLink } from "react-router-hash-link"; 
-import { navigation } from "../../data";
+import { HashLink } from "react-router-hash-link";
+import { navigation } from "../../lib/data"
 import { useTranslation } from "react-i18next";
 import { Stack } from "@/shared/ui/Stack";
 import style from "./NavbarDesktop.module.scss";
@@ -12,9 +12,10 @@ export const Navbar = () => {
       <ul className={style.navigation}>
         {Object.values(navigation).map(({ text, path }) => (
           <li key={path}>
-            <HashLink smooth to={`#${path}`} 
-                className={style.navigationButton}
-              >
+            <HashLink
+              smooth to={`#${path}`}
+              className={style.navigationButton}
+            >
               {t(text)}
             </HashLink>
           </li>

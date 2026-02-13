@@ -1,6 +1,6 @@
 import { useWindowWidth, useOverflowHidden } from "@techlabteam/useful-hooks";
 import { HashLink } from "react-router-hash-link";
-import { navigation } from "../../data";
+import { navigation } from "../../lib/data"
 import { BurgerButton } from "./ui/BurgerButton";
 import { Stack } from "@/shared/ui/Stack";
 import { useTranslation } from "react-i18next";
