@@ -1,0 +1,27 @@
+@use "@/app/styles/vars.scss" as *;
+@use "@/app/styles/media-queries.scss" as *;
+@use "@/app/styles/fonts.scss" as *;
+@use "@/app/styles/mixin.scss" as *;
+
+.header {
+  @include section-style;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+
+  @include mobile-xl {
+    padding: 20px 40px;
+  }
+
+  @include desktop-m {
+    box-shadow: none;
+  }
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+
+  @include tablet-l {
+    height: 110px;
+  }
+}
