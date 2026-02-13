@@ -7,7 +7,6 @@ import { Process } from "@/widgets/Process"
 
 
 const MainPage = () => {
-  const { t } = useTranslation()
   return (
     <Stack
       direction="column"

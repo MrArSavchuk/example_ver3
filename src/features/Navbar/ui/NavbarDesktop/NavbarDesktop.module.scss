@@ -7,16 +7,15 @@
   list-style: none;
   font-size: var(--font-size-xs);
   justify-content: flex-end;
+  font-family: var(--font-lato);
 }
 
- @include desktop-l {
-    .navigationButton {
-        min-width: 100px;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--black-color);
-    }
+.navigationButton {
+  min-width: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black-color);
 }
