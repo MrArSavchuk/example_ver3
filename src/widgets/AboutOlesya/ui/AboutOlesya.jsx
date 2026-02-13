@@ -14,15 +14,9 @@ export const AboutOlesya = () => {
     const [aboutUs, setAboutUs] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const image = aboutUs?.image;
-    const description = aboutUs?.description;
+    const { image, description } = aboutUs;
     const url = "https://interior-designer-backend-k9ub.onrender.com";
     const aboutEndpoint = "/api/about";
-
-    useEffect(()=> {
-        Aos.init({duration: 1500});
-    }, []);
-
 
     useEffect(()=> {
 
@@ -94,7 +88,7 @@ export const AboutOlesya = () => {
                     </Stack>
                     
 
-                    <div className={style.quoteContainer} data-aos="fade-left">
+                    <div className={style.quoteContainer}>
                         <Stack direction="column" gap={24}>
 
                             <Quotation/>

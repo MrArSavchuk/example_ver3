@@ -1,11 +1,8 @@
 @use "@/app/styles/media-queries.scss" as *;
 @use "@/app/styles/mixin.scss" as *;
-@use "@/app/styles/vars.scss" as *;
 
 .sectionAbout{
     @include section-style;
-
-    overflow: hidden;
 
     display: grid;
     grid-template-columns: 1fr;

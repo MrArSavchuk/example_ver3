@@ -3,18 +3,11 @@ import { TypographyV2 }  from "@/shared/ui/Typography/TypographyV2";
 import { useTranslation } from "react-i18next";
 import designStudio from "@/shared/assets/images/hero.webp";
 import { HashLink } from "react-router-hash-link";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import style from "./HeroSection.module.scss";
 
 
 export const HeroSection = () => {
     const { t, i18n } = useTranslation();
-
-    useEffect(()=> {
-        Aos.init();
-    }, []);
 
     return (
         <section id="hero_section">
@@ -23,8 +16,6 @@ export const HeroSection = () => {
                 direction="column"
                 className={style.containerMobile}
                 gap="24"
-                data-aos="fade-right"
-                data-aos-duration="1500"
             >
                 <TypographyV2
                 variant="h1"
@@ -42,11 +33,8 @@ export const HeroSection = () => {
                   {t("Hero Text Mobile")}
                 </TypographyV2>
 
-                <div 
-                    data-aos="zoom-in"
-                    data-aos-duration="1200"
-                    data-aos-easing="ease-in-back"
-                >
+                <div>
+
                     <img
                         id="imgContainer"
                         src={designStudio}
@@ -64,6 +52,7 @@ export const HeroSection = () => {
                         aria-label="Navigation to Portfolio"
                     >
                         {t("See Portfolio")}
+
                     </HashLink>
                 </Stack>
             </Stack>
@@ -74,8 +63,6 @@ export const HeroSection = () => {
                     direction="column"
                     justify="center"
                     gap="24"
-                    data-aos="zoom-in-right"
-                    data-aos-duration="1700"
                 >
                     <TypographyV2
                         variant="h1"
@@ -106,9 +93,8 @@ export const HeroSection = () => {
                     loading="lazy" 
                     alt="room design"
                     className={style.image}
-                    data-aos="zoom-in-left"
-                    data-aos-duration="2500"
                 />
+
             </Stack>
         </section>
     );
