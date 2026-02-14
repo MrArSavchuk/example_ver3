@@ -1,11 +1,7 @@
 @use "@/app/styles/media-queries.scss" as *;
 
 .desktopOnly {
-  display: none;
-
-  @include tablet-l {
-    display: flex;
-  }
+  display: flex;
 }
 
 .controls {
@@ -25,6 +21,11 @@
 
   &:hover {
     background-color: var(--gray-light-color);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 }
 
@@ -47,4 +48,21 @@
 
 .cardWrapper {
   min-height: 100%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator,
+.indicatorActive {
+  width: 30px;
+  height: 3px;
+  background-color: var(--gray-color);
+}
+
+.indicatorActive {
+  background-color: var(--gray-dark-color);
 }

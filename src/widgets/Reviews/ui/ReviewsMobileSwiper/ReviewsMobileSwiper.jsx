@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { Stack } from "@/shared/ui/Stack";
-import { Pagination } from "@/shared/ui/Pagination";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
 import styles from "./ReviewsMobileSwiper.module.scss";
 
@@ -12,11 +11,17 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
 
   if (!reviews.length) return null;
 
+  const shouldEnableControls = reviews.length > 1;
+
   const next = () => {
+    if (!shouldEnableControls) return;
+
     setActiveIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
   };
 
   const prev = () => {
+    if (!shouldEnableControls) return;
+
     setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
   };
 
@@ -40,10 +45,6 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
     prev();
   };
 
-  const handlePageChange = (selected) => {
-    setActiveIndex(selected);
-  };
-
   return (
     <Stack direction="column" gap="16" className={styles.mobileOnly}>
       <div className={styles.viewport} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
@@ -56,9 +57,18 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
         </div>
       </div>
 
-      <Stack justify="center">
-        <Pagination totalItems={reviews.length} itemsPerPage={1} selectedPage={activeIndex} onPageChange={handlePageChange} />
-      </Stack>
+      <div className={styles.indicators}>
+        {reviews.map((review, index) => (
+          <button
+            key={review._id || index}
+            type="button"
+            aria-label={`${index + 1}`}
+            className={index === activeIndex ? styles.indicatorActive : styles.indicator}
+            onClick={() => setActiveIndex(index)}
+            disabled={!shouldEnableControls}
+          />
+        ))}
+      </div>
     </Stack>
   );
 };

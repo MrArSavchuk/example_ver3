@@ -1,9 +1,7 @@
 @use "@/app/styles/media-queries.scss" as *;
 
 .mobileOnly {
-  @include tablet-l {
-    display: none;
-  }
+  display: flex;
 }
 
 .viewport {
@@ -18,4 +16,27 @@
 
 .slide {
   min-width: 100%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator,
+.indicatorActive {
+  width: 30px;
+  height: 3px;
+  border: none;
+  background-color: var(--gray-color);
+}
+
+.indicatorActive {
+  background-color: var(--gray-dark-color);
+}
+
+.indicator:disabled,
+.indicatorActive:disabled {
+  cursor: default;
 }

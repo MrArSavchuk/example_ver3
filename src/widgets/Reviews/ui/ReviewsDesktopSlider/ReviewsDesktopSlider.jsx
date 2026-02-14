@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Stack } from "@/shared/ui/Stack";
-import { Pagination } from "@/shared/ui/Pagination";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
 import styles from "./ReviewsDesktopSlider.module.scss";
 
@@ -22,33 +21,43 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
 
   if (!pages.length) return null;
 
-  const shouldShowControls = pages.length > 1;
+  const shouldEnableControls = pages.length > 1;
 
   const handlePrev = () => {
+    if (!shouldEnableControls) return;
+
     setPage((prevPage) => (prevPage === 0 ? pages.length - 1 : prevPage - 1));
   };
 
   const handleNext = () => {
-    setPage((prevPage) => (prevPage === pages.length - 1 ? 0 : prevPage + 1));
-  };
+    if (!shouldEnableControls) return;
 
-  const handlePageChange = (selected) => {
-    setPage(selected);
+    setPage((prevPage) => (prevPage === pages.length - 1 ? 0 : prevPage + 1));
   };
 
   return (
     <Stack direction="column" gap="24" className={styles.desktopOnly}>
-      {shouldShowControls ? (
-        <Stack justify="end" gap="16" className={styles.controls}>
-          <button type="button" aria-label={previousLabel} className={styles.iconButton} onClick={handlePrev}>
-            <ChevronLeft strokeWidth={1} size={32} />
-          </button>
+      <Stack justify="end" gap="16" className={styles.controls}>
+        <button
+          type="button"
+          aria-label={previousLabel}
+          className={styles.iconButton}
+          onClick={handlePrev}
+          disabled={!shouldEnableControls}
+        >
+          <ChevronLeft strokeWidth={1} size={32} />
+        </button>
 
-          <button type="button" aria-label={nextLabel} className={styles.iconButton} onClick={handleNext}>
-            <ChevronRight strokeWidth={1} size={32} />
-          </button>
-        </Stack>
-      ) : null}
+        <button
+          type="button"
+          aria-label={nextLabel}
+          className={styles.iconButton}
+          onClick={handleNext}
+          disabled={!shouldEnableControls}
+        >
+          <ChevronRight strokeWidth={1} size={32} />
+        </button>
+      </Stack>
 
       <div className={styles.viewport}>
         <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
@@ -64,16 +73,11 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
         </div>
       </div>
 
-      {shouldShowControls ? (
-        <Stack justify="center">
-          <Pagination
-            totalItems={reviews.length}
-            itemsPerPage={DESKTOP_PER_PAGE}
-            selectedPage={page}
-            onPageChange={handlePageChange}
-          />
-        </Stack>
-      ) : null}
+      <div className={styles.indicators} aria-hidden="true">
+        {pages.map((_, index) => (
+          <span key={index} className={index === page ? styles.indicatorActive : styles.indicator} />
+        ))}
+      </div>
     </Stack>
   );
 };
