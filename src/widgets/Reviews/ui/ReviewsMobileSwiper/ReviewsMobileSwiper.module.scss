@@ -2,6 +2,10 @@
 
 .mobileOnly {
   display: flex;
+
+  @include tablet-l {
+    display: none;
+  }
 }
 
 .viewport {

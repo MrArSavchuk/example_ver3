@@ -1,80 +1,63 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Stack } from "@/shared/ui/Stack";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
 import styles from "./ReviewsDesktopSlider.module.scss";
 
-const DESKTOP_PER_PAGE = 3;
-
 export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
   const [page, setPage] = useState(0);
 
-  const pages = useMemo(() => {
-    const chunks = [];
+  if (!reviews.length) return null;
 
-    for (let index = 0; index < reviews.length; index += DESKTOP_PER_PAGE) {
-      chunks.push(reviews.slice(index, index + DESKTOP_PER_PAGE));
-    }
-
-    return chunks;
-  }, [reviews]);
-
-  if (!pages.length) return null;
-
-  const shouldEnableControls = pages.length > 1;
+  const isFirst = page === 0;
+  const isLast = page === reviews.length - 1;
 
   const handlePrev = () => {
-    if (!shouldEnableControls) return;
-
-    setPage((prevPage) => (prevPage === 0 ? pages.length - 1 : prevPage - 1));
+    if (isFirst) return;
+    setPage((prevPage) => prevPage - 1);
   };
 
   const handleNext = () => {
-    if (!shouldEnableControls) return;
-
-    setPage((prevPage) => (prevPage === pages.length - 1 ? 0 : prevPage + 1));
+    if (isLast) return;
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (
     <Stack direction="column" gap="24" className={styles.desktopOnly}>
-      <Stack justify="end" gap="16" className={styles.controls}>
+      <div className={styles.viewportWrap}>
         <button
           type="button"
           aria-label={previousLabel}
           className={styles.iconButton}
           onClick={handlePrev}
-          disabled={!shouldEnableControls}
+          disabled={isFirst}
         >
-          <ChevronLeft strokeWidth={1} size={32} />
+          <ChevronLeft strokeWidth={1} size={40} />
         </button>
+
+        <div className={styles.viewport}>
+          <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
+            {reviews.map((review) => (
+              <article key={review._id} className={styles.slide}>
+                <ReviewsCard review={review} />
+              </article>
+            ))}
+          </div>
+        </div>
 
         <button
           type="button"
           aria-label={nextLabel}
           className={styles.iconButton}
           onClick={handleNext}
-          disabled={!shouldEnableControls}
+          disabled={isLast}
         >
-          <ChevronRight strokeWidth={1} size={32} />
+          <ChevronRight strokeWidth={1} size={40} />
         </button>
-      </Stack>
-
-      <div className={styles.viewport}>
-        <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
-          {pages.map((items, index) => (
-            <div key={index} className={styles.page}>
-              {items.map((review) => (
-                <article key={review._id} className={styles.cardWrapper}>
-                  <ReviewsCard review={review} />
-                </article>
-              ))}
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className={styles.indicators} aria-hidden="true">
-        {pages.map((_, index) => (
+        {reviews.map((_, index) => (
           <span key={index} className={index === page ? styles.indicatorActive : styles.indicator} />
         ))}
       </div>
