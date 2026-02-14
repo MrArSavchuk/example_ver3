@@ -1,5 +1,9 @@
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { Stack } from "@/shared/ui/Stack";
 import { Pagination } from "@/shared/ui/Pagination";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
@@ -9,74 +13,67 @@ const DESKTOP_PER_PAGE = 3;
 
 export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
   const [page, setPage] = useState(0);
+  const swiperRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
-  const pages = useMemo(() => {
-    const chunks = [];
+  const pageCount = Math.ceil(reviews.length / DESKTOP_PER_PAGE);
+  const showControls = pageCount > 1;
 
-    for (let index = 0; index < reviews.length; index += DESKTOP_PER_PAGE) {
-      chunks.push(reviews.slice(index, index + DESKTOP_PER_PAGE));
-    }
+  if (!reviews.length) return null;
 
-    return chunks;
-  }, [reviews]);
-
-  if (!pages.length) return null;
-
-  const showControls = pages.length > 1;
   const isFirst = page === 0;
-  const isLast = page === pages.length - 1;
+  const isLast = page === pageCount - 1;
 
   const handlePrev = () => {
     if (isFirst) return;
-    setPage((prevPage) => prevPage - 1);
+    swiperRef.current?.slideTo((page - 1) * DESKTOP_PER_PAGE);
   };
 
   const handleNext = () => {
     if (isLast) return;
-    setPage((prevPage) => prevPage + 1);
+    swiperRef.current?.slideTo((page + 1) * DESKTOP_PER_PAGE);
+  };
+
+  const handleSlideChange = (swiper) => {
+    setPage(Math.floor(swiper.activeIndex / DESKTOP_PER_PAGE));
   };
 
   const handlePageChange = (selected) => {
-    setPage(selected);
+    swiperRef.current?.slideTo(selected * DESKTOP_PER_PAGE);
   };
 
   return (
     <Stack direction="column" gap="24" className={styles.desktopOnly}>
       <div className={`${styles.viewportWrap} ${!showControls ? styles.viewportWrapFull : ""}`}>
         {showControls ? (
-          <button
-            type="button"
-            aria-label={previousLabel}
-            className={styles.iconButton}
-            onClick={handlePrev}
-            disabled={isFirst}
-          >
+          <button type="button" aria-label={previousLabel} className={styles.iconButton} onClick={handlePrev} disabled={isFirst} ref={prevRef}>
             <ChevronLeft strokeWidth={1} size={40} />
           </button>
         ) : null}
 
-        <div className={styles.viewport}>
-          <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
-            {pages.map((items, index) => (
-              <div key={index} className={styles.page}>
-                {items.map((review) => (
-                  <article key={review._id} className={styles.slide}>
-                    <ReviewsCard review={review} />
-                  </article>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={DESKTOP_PER_PAGE}
+          slidesPerGroup={DESKTOP_PER_PAGE}
+          spaceBetween={20}
+          allowTouchMove={false}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={handleSlideChange}
+          navigation={{ prevEl: prevRef, nextEl: nextRef }}
+          className={styles.swiperViewport}
+        >
+          {reviews.map((review) => (
+            <SwiperSlide key={review._id} className={styles.slide}>
+              <ReviewsCard review={review} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         {showControls ? (
-          <button
-            type="button"
-            aria-label={nextLabel}
-            className={styles.iconButton}
-            onClick={handleNext}
-            disabled={isLast}
-          >
+          <button type="button" aria-label={nextLabel} className={styles.iconButton} onClick={handleNext} disabled={isLast} ref={nextRef}>
             <ChevronRight strokeWidth={1} size={40} />
           </button>
         ) : null}
@@ -84,12 +81,7 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
 
       {showControls ? (
         <Stack justify="center">
-          <Pagination
-            totalItems={reviews.length}
-            itemsPerPage={DESKTOP_PER_PAGE}
-            selectedPage={page}
-            onPageChange={handlePageChange}
-          />
+          <Pagination totalItems={reviews.length} itemsPerPage={DESKTOP_PER_PAGE} selectedPage={page} onPageChange={handlePageChange} />
         </Stack>
       ) : null}
     </Stack>

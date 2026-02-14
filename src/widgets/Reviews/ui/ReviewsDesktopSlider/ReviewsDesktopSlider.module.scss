@@ -33,6 +33,7 @@
   display: grid;
   place-items: center;
   transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 2;
 
   &:first-child {
     left: 0;
@@ -53,21 +54,8 @@
   }
 }
 
-.viewport {
-  overflow: hidden;
+.swiperViewport {
   width: 100%;
-}
-
-.track {
-  display: flex;
-  transition: transform 0.55s ease;
-}
-
-.page {
-  min-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
 }
 
 .slide {

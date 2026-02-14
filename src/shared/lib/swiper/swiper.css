@@ -1,0 +1,13 @@
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.swiper-slide {
+  height: auto;
+}
