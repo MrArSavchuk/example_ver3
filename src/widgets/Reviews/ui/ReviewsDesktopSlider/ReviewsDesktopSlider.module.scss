@@ -1,0 +1,68 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.desktopOnly {
+  display: flex;
+}
+
+.controls {
+  width: 100%;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gray-color);
+  background-color: var(--white);
+  color: var(--text-color);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--gray-light-color);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.page {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cardWrapper {
+  min-height: 100%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator,
+.indicatorActive {
+  width: 30px;
+  height: 3px;
+  background-color: var(--gray-color);
+}
+
+.indicatorActive {
+  background-color: var(--gray-dark-color);
+}
