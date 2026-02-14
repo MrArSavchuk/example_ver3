@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Stack } from "@/shared/ui/Stack";
+import { Pagination } from "@/shared/ui/Pagination";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
 import styles from "./ReviewsMobileSwiper.module.scss";
 
@@ -45,6 +46,10 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
     prev();
   };
 
+  const handlePageChange = (selected) => {
+    setActiveIndex(selected);
+  };
+
   return (
     <Stack direction="column" gap="16" className={styles.mobileOnly}>
       <div className={styles.viewport} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
@@ -58,18 +63,9 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
       </div>
 
       {showControls ? (
-        <div className={styles.indicators}>
-          {reviews.map((review, index) => (
-            <button
-              key={review._id || index}
-              type="button"
-              aria-label={`${index + 1}`}
-              className={index === activeIndex ? styles.indicatorActive : styles.indicator}
-              onClick={() => setActiveIndex(index)}
-              disabled={!showControls}
-            />
-          ))}
-        </div>
+        <Stack justify="center">
+          <Pagination totalItems={reviews.length} itemsPerPage={1} selectedPage={activeIndex} onPageChange={handlePageChange} />
+        </Stack>
       ) : null}
     </Stack>
   );

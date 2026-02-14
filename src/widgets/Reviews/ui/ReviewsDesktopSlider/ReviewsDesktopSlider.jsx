@@ -1,17 +1,30 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Stack } from "@/shared/ui/Stack";
+import { Pagination } from "@/shared/ui/Pagination";
 import { ReviewsCard } from "../ReviewsCard/ReviewsCard";
 import styles from "./ReviewsDesktopSlider.module.scss";
+
+const DESKTOP_PER_PAGE = 3;
 
 export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
   const [page, setPage] = useState(0);
 
-  if (!reviews.length) return null;
+  const pages = useMemo(() => {
+    const chunks = [];
 
-  const showControls = reviews.length > 1;
+    for (let index = 0; index < reviews.length; index += DESKTOP_PER_PAGE) {
+      chunks.push(reviews.slice(index, index + DESKTOP_PER_PAGE));
+    }
+
+    return chunks;
+  }, [reviews]);
+
+  if (!pages.length) return null;
+
+  const showControls = pages.length > 1;
   const isFirst = page === 0;
-  const isLast = page === reviews.length - 1;
+  const isLast = page === pages.length - 1;
 
   const handlePrev = () => {
     if (isFirst) return;
@@ -21,6 +34,10 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
   const handleNext = () => {
     if (isLast) return;
     setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePageChange = (selected) => {
+    setPage(selected);
   };
 
   return (
@@ -40,10 +57,14 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
 
         <div className={styles.viewport}>
           <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
-            {reviews.map((review) => (
-              <article key={review._id} className={styles.slide}>
-                <ReviewsCard review={review} />
-              </article>
+            {pages.map((items, index) => (
+              <div key={index} className={styles.page}>
+                {items.map((review) => (
+                  <article key={review._id} className={styles.slide}>
+                    <ReviewsCard review={review} />
+                  </article>
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -62,11 +83,14 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
       </div>
 
       {showControls ? (
-        <div className={styles.indicators} aria-hidden="true">
-          {reviews.map((_, index) => (
-            <span key={index} className={index === page ? styles.indicatorActive : styles.indicator} />
-          ))}
-        </div>
+        <Stack justify="center">
+          <Pagination
+            totalItems={reviews.length}
+            itemsPerPage={DESKTOP_PER_PAGE}
+            selectedPage={page}
+            onPageChange={handlePageChange}
+          />
+        </Stack>
       ) : null}
     </Stack>
   );

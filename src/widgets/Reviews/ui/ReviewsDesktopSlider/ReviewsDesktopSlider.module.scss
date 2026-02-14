@@ -43,7 +43,6 @@
   }
 
   &:hover {
-    cursor: pointer;
     background-color: rgb(255 255 255 / 55%);
   }
 
@@ -64,23 +63,13 @@
   transition: transform 0.55s ease;
 }
 
-.slide {
+.page {
   min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.indicators {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-.indicator,
-.indicatorActive {
-  width: 30px;
-  height: 3px;
-  background-color: var(--gray-color);
-}
-
-.indicatorActive {
-  background-color: var(--gray-dark-color);
+.slide {
+  min-width: 0;
 }
