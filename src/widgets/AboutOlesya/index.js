@@ -1,0 +1,1 @@
+export { AboutOlesya } from "./ui/AboutOlesya";
