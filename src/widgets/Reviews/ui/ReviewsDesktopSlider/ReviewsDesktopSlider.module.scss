@@ -16,16 +16,19 @@
 
 .iconButton {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
   width: 72px;
-  height: 72px;
-  border: 1px solid var(--gray-color);
-  background-color: var(--white);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  background-color: rgb(255 255 255 / 32%);
   color: var(--gray-dark-color);
   cursor: pointer;
   display: grid;
   place-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   &:first-child {
     left: 0;
@@ -35,11 +38,14 @@
     right: 0;
   }
 
+  &:hover {
+    background-color: rgb(255 255 255 / 55%);
+  }
+
   &:disabled {
     color: var(--gray-color);
-    border-color: var(--gray-color);
+    background-color: rgb(255 255 255 / 20%);
     cursor: default;
-    opacity: 0.8;
   }
 }
 
