@@ -1,0 +1,75 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.desktopOnly {
+  display: none;
+
+  @include tablet-l {
+    display: flex;
+  }
+}
+
+.viewportWrap {
+  position: relative;
+  width: 100%;
+  padding: 0 88px;
+}
+
+.iconButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--gray-color);
+  background-color: var(--white);
+  color: var(--gray-dark-color);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    right: 0;
+  }
+
+  &:disabled {
+    color: var(--gray-color);
+    border-color: var(--gray-color);
+    cursor: default;
+    opacity: 0.8;
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator,
+.indicatorActive {
+  width: 30px;
+  height: 3px;
+  background-color: var(--gray-color);
+}
+
+.indicatorActive {
+  background-color: var(--gray-dark-color);
+}
