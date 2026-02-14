@@ -17,13 +17,13 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
   const next = () => {
     if (!showControls) return;
 
-    setActiveIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) => (prevIndex >= reviews.length - 1 ? prevIndex : prevIndex + 1));
   };
 
   const prev = () => {
     if (!showControls) return;
 
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex <= 0 ? prevIndex : prevIndex - 1));
   };
 
   const handleTouchStart = (event) => {
