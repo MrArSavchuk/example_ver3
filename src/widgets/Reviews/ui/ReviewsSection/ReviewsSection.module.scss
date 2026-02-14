@@ -1,0 +1,22 @@
+@use "@/app/styles/mixin.scss" as *;
+
+.reviewsSection {
+  @include section-style;
+}
+
+.heading {
+  text-transform: var(--text-uppercase);
+}
+
+.description {
+  text-indent: var(--text-indent);
+  max-width: 820px;
+}
+
+.skeletonWrap {
+  width: 100%;
+}
+
+.errorText {
+  color: var(--error-color);
+}
