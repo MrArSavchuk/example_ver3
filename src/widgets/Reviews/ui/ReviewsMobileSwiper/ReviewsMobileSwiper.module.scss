@@ -1,7 +1,9 @@
 @use "@/app/styles/media-queries.scss" as *;
 
 .mobileOnly {
-  display: flex;
+  @include tablet-l {
+    display: none;
+  }
 }
 
 .viewport {

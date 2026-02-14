@@ -1,7 +1,11 @@
 @use "@/app/styles/media-queries.scss" as *;
 
 .desktopOnly {
-  display: flex;
+  display: none;
+
+  @include tablet-l {
+    display: flex;
+  }
 }
 
 .controls {
