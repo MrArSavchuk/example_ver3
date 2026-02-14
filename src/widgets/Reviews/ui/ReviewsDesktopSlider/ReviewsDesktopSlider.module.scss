@@ -14,6 +14,10 @@
   padding: 0 88px;
 }
 
+.viewportWrapFull {
+  padding: 0;
+}
+
 .iconButton {
   position: absolute;
   top: 0;
@@ -39,6 +43,7 @@
   }
 
   &:hover {
+    cursor: pointer;
     background-color: rgb(255 255 255 / 55%);
   }
 

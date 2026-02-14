@@ -9,6 +9,7 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
 
   if (!reviews.length) return null;
 
+  const showControls = reviews.length > 1;
   const isFirst = page === 0;
   const isLast = page === reviews.length - 1;
 
@@ -24,16 +25,18 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
 
   return (
     <Stack direction="column" gap="24" className={styles.desktopOnly}>
-      <div className={styles.viewportWrap}>
-        <button
-          type="button"
-          aria-label={previousLabel}
-          className={styles.iconButton}
-          onClick={handlePrev}
-          disabled={isFirst}
-        >
-          <ChevronLeft strokeWidth={1} size={40} />
-        </button>
+      <div className={`${styles.viewportWrap} ${!showControls ? styles.viewportWrapFull : ""}`}>
+        {showControls ? (
+          <button
+            type="button"
+            aria-label={previousLabel}
+            className={styles.iconButton}
+            onClick={handlePrev}
+            disabled={isFirst}
+          >
+            <ChevronLeft strokeWidth={1} size={40} />
+          </button>
+        ) : null}
 
         <div className={styles.viewport}>
           <div className={styles.track} style={{ transform: `translateX(-${page * 100}%)` }}>
@@ -45,22 +48,26 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
           </div>
         </div>
 
-        <button
-          type="button"
-          aria-label={nextLabel}
-          className={styles.iconButton}
-          onClick={handleNext}
-          disabled={isLast}
-        >
-          <ChevronRight strokeWidth={1} size={40} />
-        </button>
+        {showControls ? (
+          <button
+            type="button"
+            aria-label={nextLabel}
+            className={styles.iconButton}
+            onClick={handleNext}
+            disabled={isLast}
+          >
+            <ChevronRight strokeWidth={1} size={40} />
+          </button>
+        ) : null}
       </div>
 
-      <div className={styles.indicators} aria-hidden="true">
-        {reviews.map((_, index) => (
-          <span key={index} className={index === page ? styles.indicatorActive : styles.indicator} />
-        ))}
-      </div>
+      {showControls ? (
+        <div className={styles.indicators} aria-hidden="true">
+          {reviews.map((_, index) => (
+            <span key={index} className={index === page ? styles.indicatorActive : styles.indicator} />
+          ))}
+        </div>
+      ) : null}
     </Stack>
   );
 };
