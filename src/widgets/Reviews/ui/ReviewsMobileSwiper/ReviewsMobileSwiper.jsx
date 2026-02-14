@@ -11,16 +11,16 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
 
   if (!reviews.length) return null;
 
-  const shouldEnableControls = reviews.length > 1;
+  const showControls = reviews.length > 1;
 
   const next = () => {
-    if (!shouldEnableControls) return;
+    if (!showControls) return;
 
     setActiveIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
   };
 
   const prev = () => {
-    if (!shouldEnableControls) return;
+    if (!showControls) return;
 
     setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
   };
@@ -57,18 +57,20 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
         </div>
       </div>
 
-      <div className={styles.indicators}>
-        {reviews.map((review, index) => (
-          <button
-            key={review._id || index}
-            type="button"
-            aria-label={`${index + 1}`}
-            className={index === activeIndex ? styles.indicatorActive : styles.indicator}
-            onClick={() => setActiveIndex(index)}
-            disabled={!shouldEnableControls}
-          />
-        ))}
-      </div>
+      {showControls ? (
+        <div className={styles.indicators}>
+          {reviews.map((review, index) => (
+            <button
+              key={review._id || index}
+              type="button"
+              aria-label={`${index + 1}`}
+              className={index === activeIndex ? styles.indicatorActive : styles.indicator}
+              onClick={() => setActiveIndex(index)}
+              disabled={!showControls}
+            />
+          ))}
+        </div>
+      ) : null}
     </Stack>
   );
 };
