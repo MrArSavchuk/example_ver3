@@ -1,0 +1,46 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.mobileOnly {
+  display: flex;
+
+  @include tablet-l {
+    display: none;
+  }
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator,
+.indicatorActive {
+  width: 30px;
+  height: 3px;
+  border: none;
+  background-color: var(--gray-color);
+}
+
+.indicatorActive {
+  background-color: var(--gray-dark-color);
+}
+
+.indicator:disabled,
+.indicatorActive:disabled {
+  cursor: default;
+}
