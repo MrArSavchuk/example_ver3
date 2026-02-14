@@ -1,0 +1,21 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.mobileOnly {
+  @include tablet-l {
+    display: none;
+  }
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
