@@ -1,0 +1,17 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.mobileOnly {
+  display: flex;
+
+  @include tablet-l {
+    display: none;
+  }
+}
+
+.swiperViewport {
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+}

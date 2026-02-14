@@ -1,0 +1,63 @@
+@use "@/app/styles/media-queries.scss" as *;
+
+.desktopOnly {
+  display: none;
+
+  @include tablet-l {
+    display: flex;
+  }
+}
+
+.viewportWrap {
+  position: relative;
+  width: 100%;
+  padding: 0 88px;
+}
+
+.viewportWrapFull {
+  padding: 0;
+}
+
+.iconButton {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  background-color: rgb(255 255 255 / 32%);
+  color: var(--gray-dark-color);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 2;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    right: 0;
+  }
+
+  &:hover {
+    background-color: rgb(255 255 255 / 55%);
+  }
+
+  &:disabled {
+    color: var(--gray-color);
+    background-color: rgb(255 255 255 / 20%);
+    cursor: default;
+  }
+}
+
+.swiperViewport {
+  width: 100%;
+}
+
+.slide {
+  min-width: 0;
+}

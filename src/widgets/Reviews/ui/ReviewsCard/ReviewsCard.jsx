@@ -1,7 +1,7 @@
 import { Stack } from "@/shared/ui/Stack";
 import { TypographyV2 } from "@/shared/ui/Typography";
-import styles from "./ReviewsCard.module.scss";
 import { Quotation } from "@/shared/assets/svg/Quotation";
+import styles from "./ReviewsCard.module.scss";
 
 export const ReviewsCard = ({ review }) => {
   if (!review) return null;
@@ -10,7 +10,7 @@ export const ReviewsCard = ({ review }) => {
   const usernameDisplay = review.username || "";
 
   return (
-    <Stack direction="column" gap="32" justify="between">
+    <Stack direction="column" gap="24" className={styles.card}>
       <Quotation />
       <TypographyV2 variant="body16" className={styles.text}>
         {textDisplay}
