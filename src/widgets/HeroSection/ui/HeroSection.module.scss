@@ -1,7 +1,7 @@
 @use "@/app/styles/media-queries.scss" as *;
 @use "@/app/styles/mixin.scss" as *;
 
-.containerMobile{
+.containerMobile {
     @include section-style;
 
     @include tablet-m {
@@ -9,12 +9,12 @@
     }
 }
 
-.mobileTitle{   
+.mobileTitle {
     text-transform: var(--text-uppercase);
     font-size: 36px;
 
     span {
-    color: var(--red-color);
+        color: var(--red-color);
     }
 
     @include mobile-l {
@@ -29,20 +29,22 @@
 .textAbout {
     text-indent: var(--text-indent);
     text-align: justify;
-    hyphens:auto;
+    hyphens: auto;
     overflow-wrap: break-word;
     word-break: break-word;
 }
 
-.buttonMobile{
+.buttonMobile {
     color: var(--red-color);
-    font-size: var( --font-size-sm);
+    font-size: var(--font-size-sm);
     font-family: var(--font-lato);
+
     @include tablet-m {
         display: none;
     }
 }
-.image{
+
+.image {
     width: 100%;
 
     @include tablet-m {
@@ -54,7 +56,8 @@
         width: 70%;
     }
 }
-.containerDesktop{
+
+.containerDesktop {
     display: none;
 
     @include tablet-m {
@@ -67,37 +70,37 @@
 
 }
 
-    .desktopTitle {
-        display: none;
+.desktopTitle {
+    display: none;
 
-        span {
+    span {
         color: var(--red-color);
-        }
+    }
 
-        @include tablet-m {
+    @include tablet-m {
         display: flex;
         position: absolute;
         left: 0px;
         top: -90px;
         text-transform: var(--text-uppercase);
         white-space: nowrap;
-        }
-
-        @include tablet-l {
-            font-size: 7rem;
-            top: -80px;
-        }
-
-        @include desktop-m {
-            font-size: var(--font-size-xxl);
-            top: -80px;
-        }
     }
 
-    .buttonDesktop{
-        @include tablet-m {
-            color: var(--text-color);
-            font-size: var(--font-size-sm);
-            font-family: var(--font-lato);
-        }
+    @include tablet-l {
+        font-size: 7rem;
+        top: -80px;
     }
+
+    @include desktop-m {
+        font-size: var(--font-size-xxl);
+        top: -80px;
+    }
+}
+
+.buttonDesktop {
+    @include tablet-m {
+        color: var(--text-color);
+        font-size: var(--font-size-sm);
+        font-family: var(--font-lato);
+    }
+}

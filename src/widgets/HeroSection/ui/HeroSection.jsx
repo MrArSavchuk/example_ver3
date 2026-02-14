@@ -1,9 +1,9 @@
 import { Stack } from "@/shared/ui/Stack";
-import { TypographyV2 }  from "@/shared/ui/Typography/TypographyV2";
 import { useTranslation } from "react-i18next";
 import designStudio from "@/shared/assets/images/hero.webp";
 import { HashLink } from "react-router-hash-link";
 import style from "./HeroSection.module.scss";
+import { TypographyV2 } from "@/shared/ui/Typography";
 
 
 export const HeroSection = () => {
@@ -18,19 +18,19 @@ export const HeroSection = () => {
                 gap="24"
             >
                 <TypographyV2
-                variant="h1"
-                font="poiretOne"
-                className={style.mobileTitle}
+                    variant="h1"
+                    font="poiretOne"
+                    className={style.mobileTitle}
                 >
                     OM <span>D</span>esign studi<span>O</span>
                 </TypographyV2>
 
                 <TypographyV2
-                variant="body14"
-                lang={i18n.language}
-                className={style.textAbout}
+                    variant="body14"
+                    lang={i18n.language}
+                    className={style.textAbout}
                 >
-                  {t("Hero Text Mobile")}
+                    {t("Hero Text Mobile")}
                 </TypographyV2>
 
                 <div>
@@ -38,15 +38,15 @@ export const HeroSection = () => {
                     <img
                         id="imgContainer"
                         src={designStudio}
-                        loading="lazy" 
+                        loading="lazy"
                         alt="room design"
                         className={style.image}
                     />
                 </div>
 
                 <Stack justify="center">
-                    <HashLink 
-                        smooth 
+                    <HashLink
+                        smooth
                         to="#portfolio"
                         className={style.buttonMobile}
                         aria-label="Navigation to Portfolio"
@@ -77,8 +77,8 @@ export const HeroSection = () => {
                         {t("Hero Text")}
                     </TypographyV2>
 
-                    <HashLink 
-                        smooth 
+                    <HashLink
+                        smooth
                         to="#portfolio"
                         className={style.buttonDesktop}
                         aria-label="Navigation to Portfolio"
@@ -90,11 +90,10 @@ export const HeroSection = () => {
                 <img
                     id="imgContainer"
                     src={designStudio}
-                    loading="lazy" 
+                    loading="lazy"
                     alt="room design"
                     className={style.image}
                 />
-
             </Stack>
         </section>
     );
