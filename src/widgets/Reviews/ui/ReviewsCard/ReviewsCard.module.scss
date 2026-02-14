@@ -1,10 +1,15 @@
 @use "@/app/styles/media-queries.scss" as *;
 
+.card {
+  height: auto;
+}
 
 .text {
   text-indent: var(--text-indent);
-  overflow: auto;
   text-align: justify;
   hyphens: auto;
-}
 
+  @include tablet-m {
+    min-height: 150px;
+  }
+}
