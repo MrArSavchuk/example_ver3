@@ -10,7 +10,7 @@ export const ReviewsCard = ({ review }) => {
   const usernameDisplay = review.username || "";
 
   return (
-    <Stack direction="column" gap="32" justify="between" className={styles.card}>
+    <Stack direction="column" gap="24" className={styles.card}>
       <Quotation />
       <TypographyV2 variant="body16" className={styles.text}>
         {textDisplay}

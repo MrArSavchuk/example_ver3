@@ -1,7 +1,7 @@
 @use "@/app/styles/media-queries.scss" as *;
 
 .card {
-  height: 100%;
+  height: auto;
 }
 
 .text {
@@ -10,6 +10,6 @@
   hyphens: auto;
 
   @include tablet-m {
-    min-height: 150px;
+    min-height: 120px;
   }
 }
