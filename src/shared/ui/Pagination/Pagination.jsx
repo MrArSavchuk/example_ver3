@@ -14,6 +14,7 @@ export const Pagination = ({
     itemsPerPage,
     onPageChange,
     selectedPage, // 0 based
+    showArrows = true,
 }) => {
     const pageCount = Math.ceil(totalItems / itemsPerPage);
 
@@ -30,8 +31,8 @@ export const Pagination = ({
             pageCount={pageCount}
             forcePage={selectedPage}
             onPageChange={({ selected }) => onPageChange(selected)}
-            previousLabel="‹"
-            nextLabel="›"
+            previousLabel={showArrows ? "‹" : null}
+            nextLabel={showArrows ? "›" : null}
             previousAriaLabel="Prev page"
             nextAriaLabel="Next page"
             pageRangeDisplayed={pageRangeDisplayed}

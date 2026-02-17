@@ -89,6 +89,7 @@ export const ReviewsDesktopSlider = ({ reviews, previousLabel, nextLabel }) => {
             itemsPerPage={DESKTOP_PER_PAGE}
             selectedPage={page}
             onPageChange={handlePageChange}
+            showArrows={false}
           />
         </Stack>
       ) : null}

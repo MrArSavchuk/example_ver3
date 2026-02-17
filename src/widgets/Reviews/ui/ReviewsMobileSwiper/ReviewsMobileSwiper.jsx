@@ -64,7 +64,7 @@ export const ReviewsMobileSwiper = ({ reviews }) => {
 
       {showControls ? (
         <Stack justify="center">
-          <Pagination totalItems={reviews.length} itemsPerPage={1} selectedPage={activeIndex} onPageChange={handlePageChange} />
+          <Pagination totalItems={reviews.length} itemsPerPage={1} selectedPage={activeIndex} onPageChange={handlePageChange} showArrows={false} />
         </Stack>
       ) : null}
     </Stack>
