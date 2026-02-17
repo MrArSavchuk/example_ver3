@@ -10,8 +10,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/src'
+      '@': '/src',
+      'swiper/react': '/src/shared/lib/swiper/react.jsx',
+      'swiper/modules': '/src/shared/lib/swiper/modules.js',
+      'swiper/css/navigation': '/src/shared/lib/swiper/navigation.css',
+      'swiper/css/pagination': '/src/shared/lib/swiper/pagination.css',
+      'swiper/css': '/src/shared/lib/swiper/swiper.css',
     },
   },
 })
-
